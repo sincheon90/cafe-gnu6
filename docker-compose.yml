@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  db:
+    image: mysql
+    env_file:
+      - ./.env
+    cap_add:
+      - SYS_NICE
+    command:
+      - --lower_case_table_names=1
+    volumes:
+      - ./db/:/var/lib/mysql/
+    ports:
+      - 3306:3306
+    restart: always
+
+  adminer:
+    image: adminer
+    env_file:
+      - ./.env
+    ports:
+      - 8938:8080
+    restart: always
+
+  web:
+    build: ./web/
+    env_file:
+      - ./.env
+    command:
+      - bash
+      - -c
+      - |
+        /wait-for-it.sh db:3306 -t 10
+        uvicorn main:app --host 0.0.0.0 --port 44444 --reload
+    volumes:
+      - ./web/:/app/ #: 마운트기호
+      - ./.env:/app/.env
+    ports:
+      - 44444:44444
+    restart: always
+
+  nginx:
+    image: nginx
+    volumes:
+      - ./web/:/app/
+      - ./nginx/:/etc/nginx/conf.d/
+    ports:
+      - 80:80
+      # - 443:443
+    restart: always
