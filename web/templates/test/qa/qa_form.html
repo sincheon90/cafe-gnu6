@@ -9,27 +9,7 @@
 {% block title %}{{ qa_config.qa_title }}
 {% endblock title %}
 {% block subtitle %}
-  <header style="z-index: 100; height: 250px;">
-    <div style="
-          position: absolute;
-          top: 0px;
-          left: 0px;
-          width: 100%;
-          height: 250px;
-          z-index: -100;background-image:url('{{ theme_asset(request, 'img/test.jpg') }}');
-        " class="dark-image"></div>
-    <div class="d-flex flex-column min-vh-50 bg-black-50 " style="height: 250px;padding-top:60px">
-      <div class="container my-auto">
-        <div class="row justify-content-center align-center">
-          <div class="col-12 col-md-8 col-lg-6 text-center">
-            <h4 class="text-xs text-white" style="">
-              {{ qa_config.qa_title }}
-            </h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+  {{ qa_config.qa_title }}
 {% endblock subtitle %}
 
 {% block content %}
@@ -154,12 +134,12 @@
       
       function fwrite_submit(f) {
         /*
-            var hp = f.qa_hp.value.replace(/[0-9\-]/g, "");
-            if(hp.length > 0) {
-                alert("휴대폰번호는 숫자, - 으로만 입력해 주십시오.");
-                return false;
-            }
-            */
+                var hp = f.qa_hp.value.replace(/[0-9\-]/g, "");
+                if(hp.length > 0) {
+                    alert("휴대폰번호는 숫자, - 으로만 입력해 주십시오.");
+                    return false;
+                }
+                */
         document
           .getElementById("btn_submit")
           .disabled = true;

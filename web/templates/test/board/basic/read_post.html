@@ -2,35 +2,13 @@
 {% if board.bo_use_sideview %}
     {% import "/sideview/macros.html" as sideview %}
 {% endif %}
-
 {% block head %}
     <script src="/static/js/viewimageresize.js"></script>
 {% endblock head %}
-
 {% block title %}{{ write.wr_subject|truncate(20, False, '...', 0) }} > {{ board.subject }}{% endblock title %}
 {% block subtitle %}
-<header style="z-index: 100; height: 250px;">
-    <div style="
-          position: absolute;
-          top: 0px;
-          left: 0px;
-          width: 100%;
-          height: 250px;
-          z-index: -100;background-image:url('{{ theme_asset(request, 'img/test.jpg') }}');
-        " class="dark-image"></div>
-    <div class="d-flex flex-column min-vh-50 bg-black-50 " style="height: 250px;padding-top:60px">
-      <div class="container my-auto">
-        <div class="row justify-content-center align-center">
-          <div class="col-12 col-md-8 col-lg-6 text-center">
-            <h4 class="text-xs text-white" style="">
-              {{ board.subject }}
-            </h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  {% endblock subtitle %}
+{{ board.subject }}
+{% endblock subtitle %}
 {% block content %}
 {% set board_config=board_config(request, board) %}
 {% set login_member=request.state.login_member %}

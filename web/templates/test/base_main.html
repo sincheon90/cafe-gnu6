@@ -1,0 +1,232 @@
+{% extends "base_sub.html" %}
+
+{% block body_html %}
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"/>
+  {% set member = request.state.login_member %}
+  <!-- 상단 시작 { -->
+  <nav class="navbar-expand-lg navbar-togglable fixed-top text-white">
+    <div class="navsquare shadow-sm" style="
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 72px;
+        z-index: -100;
+      "></div>
+    <div class="container">
+      <div class="row text-end mt-2">
+        {% if request.state.login_member %}
+          <div class="col text-start">
+            어서오세요
+            {{ member.mb_nick if member is defined else '' }}
+            님
+          </div>
+          <div class="col">
+            <a class="text-emp" href="/bbs/logout">로그아웃</a>
+            <a class="text-emp" href="/bbs/member_confirm">정보수정</a>
+          </div>
+        {% else %}
+          <div class="col">
+            <a class="text-emp" href="/bbs/login">로그인</a>
+            <a class="text-emp" href="/bbs/register">회원가입</a>
+          </div>
+        {% endif %}
+      </div>
+      <div class="container">
+        <a class="navbar-brand d-lg-none" href="">NOLDAGA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse row" id="navbarCollapse">
+          <ul class="pe-4 navbar-nav nav-underline col-4 d-flex justify-content-between
+          ">
+            <li class="nav-item">
+              <a class="navbutton nav-link text-white" href="{{ url_for('content_view', co_id='company') }}">소개</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbutton nav-link text-white" href="">메뉴</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbutton nav-link text-white" href="">교육</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbutton nav-link text-white" href="">대관</a>
+            </li>
+          </ul>
+
+          <a class="p-0 navbar-brand text-center d-none d-lg-flex mx-lg-auto fs-1 title text-emp col-3" href="/">
+            <div class="col-12 text-center">
+              NOLDAGA
+            </div>
+          </a>
+          <ul class="ps-4 navbar-nav nav-underline col-4 d-flex justify-content-between ">
+            <li class="nav-item">
+              <a class="navbutton nav-link text-white" href="">일정</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbutton nav-link text-white" href="/board/free">게시판</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbutton nav-link text-white" href="">카페소식</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbutton nav-link text-white" href="/bbs/faq">고객지원</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- } 상단 끝 -->
+
+  {% if errors %}
+    <ul>
+      {% for error in errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <!-- 콘텐츠 시작 { -->
+  {% block subtitle %}{% endblock subtitle %}
+
+  {% block content %}{% endblock content %}
+</div>
+<!-- } 콘텐츠 끝 -->
+<hr>
+
+<!-- 하단 시작 { -->
+<div id="ft">
+  <div id="ft_wr">
+    <div id="ft_link" class="ft_cnt">
+      <div class="container px-4">
+        <div class="row gx-7">
+          <div class="col-sm-4">
+            <h5 class="text-xs text-primary">
+              은행정보
+            </h5>
+            <p class="mb-6">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorum, sint corporis nostrum, possimus unde eos vitae eius quasi saepe.
+            </p>
+          </div>
+          <div class="col-sm-4">
+            <h5 class="text-xs text-primary">
+              회사정보
+            </h5>
+            <ul class="list-unstyled mb-6 h5">
+              <li class="d-flex mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewbox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                </svg>
+                &nbsp;주소 : 전라남도 나주시 산포면 산남로 76-0
+              </li>
+              <li class="d-flex mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewbox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                </svg>
+                &nbsp;연락처 : +1 987 654 3210
+              </li>
+              <li class="d-flex mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewbox="0 0 16 16">
+                  <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
+                  <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
+                </svg>
+                &nbsp;<a href="mailto:admin@domain.com">admin@domain.com</a>
+              </li>
+              <li class="d-flex mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewbox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+                &nbsp;대표 : 김다영
+              </li>
+              <li class="d-flex mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-award" viewbox="0 0 16 16">
+                  <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
+                  <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                </svg>
+                &nbsp;사업자 등록번호 : 680-87-02367
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-sm-4">
+            <h5 class="text-xs text-primary">
+              오픈 시간
+            </h5>
+            <div class="mb-3">
+              <div class="text-xs">월 ~ 토</div>
+              <div class="text-xs">9:00 AM - 10:00 PM</div>
+            </div>
+            <div class="mb-6">
+              <div class="text-xs">일
+              </div>
+              <div class="text-xs">2:00 PM - 10:00 PM</div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="d-flex align-items-center">
+              <hr class="hr-sm me-3" style="height: 1px;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% if not request.state.is_responsive %}
+        {% if request.state.is_mobile %}
+          <a href="{{ url_for('device_change', device='pc') }}">PC버전</a>
+        {% else %}
+          <a href="{{ url_for('device_change', device='mobile') }}">모바일버전</a>
+        {% endif %}
+      {% endif %}
+    </div>
+    <div id="ft_company" class="ft_cnt"></div>
+  </div>
+  <div id="ft_copy">
+    <div class="row">
+      <div class="col-6 text-start">
+        <a href="{{ url_for('content_view', co_id='company') }}">회사소개</a>
+        <a href="{{ url_for('content_view', co_id='privacy') }}">개인정보처리방침</a>
+        <a href="{{ url_for('content_view', co_id='provision') }}">서비스이용약관</a>
+      </div>
+      <div class="col-6 text-end">Copyright &copy;
+        <b>{{ request.url.hostname }}.</b>
+        All rights reserved.</div>
+    </div>
+
+  </div>
+
+  <button type="button" id="top_btn">
+    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    <span class="blind">상단으로</span>
+  </button>
+  <button type="button" class="darkmode-toggle-switch">
+    <i class="fa-solid fa-moon visible bright"></i>
+    <i class="fa-solid fa-sun visible dark"></i>
+  </button>
+</div>
+</div>
+{% if request.state.config.cf_analytics %}
+{{ request.state.config.cf_analytics|safe }}
+{% endif %}
+
+<!-- } 하단 끝 -->
+
+<script>
+// 상단 스크롤 버튼
+$(function () {
+  $("#top_btn").on("click", function () {
+    $("html, body").animate({
+      scrollTop: 0
+    }, '500');
+    return false;
+  });
+});
+</script>
+{% endblock body_html %}
