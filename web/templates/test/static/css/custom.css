@@ -30,6 +30,26 @@ body {
   transform: scaleY(0);
   transition: transform 0.5s cubic-bezier(0, 0.9, 0.5, 1);
 }
+.navsquare.expanded {
+  transform: scaleY(1);
+}
+.navsquare.shrink {
+  transform: scaleY(0);
+}
+.navsquare-sub {
+  height: 50px;
+  background-color: white;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.5s cubic-bezier(0, 0.9, 0.5, 1);
+}
+.navsquare-sub.expanded {
+  transform: scaleY(1);
+}
+.navsquare-sub.shrink {
+  transform: scaleY(0);
+}
+
 a.button {
   display: inline-block;
   position: relative;
@@ -49,12 +69,6 @@ a.button {
   color: rgba(255, 255, 255, 1);
   color: #00b992;
   text-decoration-line: none;
-}
-.navsquare.expanded {
-  transform: scaleY(1);
-}
-.navsquare.shrink {
-  transform: scaleY(0);
 }
 .btnFade:hover {
   background: #008e70;

@@ -2,13 +2,43 @@ document.addEventListener("DOMContentLoaded", function () {
   var didScroll;
   var lastScrollTop = 0;
   var delta = 5;
-  var navbar = document.querySelector(".navsquare");
-  var navb = document.querySelector("nav");
-  var nava = document.querySelectorAll(".navbutton");
-  var navbarHeight = navb.offsetHeight;
+  var navbar = document.querySelector("nav");
+  var navbarSquare = document.querySelector(".navsquare"); // 상단바 네모
+  var navbarText = document.querySelectorAll(".navbutton"); // 상단텍스트
+  var navbarSquraeSub = document.querySelector(".navsquare-sub") // 서브메뉴 네모
+  var navbarTextSub = document.querySelectorAll(".navsubbutton") // 서브텍스트
+
+  var navbarHeight = 2;
+
+
   window.addEventListener("scroll", function () {
     didScroll = true;
   });
+
+  navbar.addEventListener("mouseover", function(){
+    mouseOverNav();
+  })
+
+  navbar.addEventListener("mouseout",function(){
+    mouseOutNav();
+  })
+
+  function mouseOutNav(){
+    subNavUp();
+    var st = window.scrollY || document.documentElement.scrollTop;
+    if (st + window.innerHeight < Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) && window.scrollY < 20) {
+      navUp();
+      navUpColorChange();
+    }
+    navSubUpColorChange();
+  }
+
+  function mouseOverNav(){
+    subNavDown();
+    navDown();
+    navDownColorChange();
+    navSubDownColorChange()
+  }
 
   setInterval(function () {
     if (didScroll) {
@@ -16,6 +46,46 @@ document.addEventListener("DOMContentLoaded", function () {
       didScroll = false;
     }
   }, 50);
+  function navUp() {
+    navbarSquare.classList.add("shrink");
+    navbarSquare.classList.remove("expanded");
+  }
+  function navDown() {
+    navbarSquare.classList.add("expanded");
+    navbarSquare.classList.remove("shrink");
+  }
+  function navUpColorChange() {
+    navbarText.forEach(function (button) {
+      button.classList.add("text-white");
+      button.classList.remove("text-success");
+    });
+  }
+  function navDownColorChange() {
+    navbarText.forEach(function (button) {
+      button.classList.add("text-success");
+      button.classList.remove("text-white");
+    });
+  }
+  function subNavUp(){
+    navbarSquraeSub.classList.remove("expanded");
+    navbarSquraeSub.classList.add("shrink");
+  }
+  function subNavDown() {
+    navbarSquraeSub.classList.add("expanded");
+    navbarSquraeSub.classList.remove("shrink");
+  }
+  function navSubUpColorChange() {
+    navbarTextSub.forEach(function (button) {
+      button.classList.add("text-white");
+      button.classList.remove("text-black-50");
+    });
+  }
+  function navSubDownColorChange() {
+    navbarTextSub.forEach(function (button) {
+      button.classList.add("text-black-50");
+      button.classList.remove("text-white");
+    });
+  }
 
   function hasScrolled() {
     var st = window.scrollY || document.documentElement.scrollTop;
@@ -28,25 +98,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // This is necessary so you never see what is "behind" the navbar.
     if (st > lastScrollTop && st > navbarHeight) {
       // Scroll Down
-      navbar.classList.add("expanded");
-      navbar.classList.remove("shrink");
-      navb.classList.add("text-black");
-      navb.classList.remove("text-white");
-      nava.forEach(function (button) {
-        button.classList.add("text-black");
-        button.classList.remove("text-white");
-      });
+      navDown();
+      navDownColorChange();
     } else {
       // Scroll Up
       if (st + window.innerHeight < Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) && window.scrollY < 20) {
-        navbar.classList.add("shrink");
-        navbar.classList.remove("expanded");
-        navb.classList.add("text-white");
-        navb.classList.remove("text-black");
-        nava.forEach(function (button) {
-          button.classList.add("text-white");
-          button.classList.remove("text-black");
-        });
+        navUp();
+        navUpColorChange();
       }
     }
 
