@@ -12,7 +12,7 @@
           top: 0px;
           left: 0px;
           width: 100%;
-          height: 72px;
+          height: 100px;
           z-index: -100;
         "></div>
     <div class="navsquare-sub shadow-sm " style="
@@ -154,16 +154,18 @@
   <!-- 콘텐츠 시작 { -->
   <div id="other" class="pt-0" style="width:100%; top:0px;">
     <div id="content" class="conatiner" style="width:100%">
-      <header style="z-index: 100; height: 250px;">
+      <header style="z-index: 100; height: 300px;">
         <div style="
               position: absolute;
+
               top: 0px;
               left: 0px;
               width: 100%;
-              height: 250px;
-              z-index: -100;background-image:url('{{ theme_asset(request, 'img/test.jpg') }}');
+              height: 300px;
+              z-index: -100;
+              background-color: green;
             " class="dark-image"></div>
-        <div class="d-flex flex-column min-vh-50 bg-black-50 " style="height: 250px;padding-top:60px">
+        <div class="d-flex flex-column min-vh-50 bg-black-50 " style="height: 300px;padding-top:100px">
           <div class="container my-auto">
             <div class="row justify-content-center align-center">
               <div class="col-12 col-md-8 col-lg-6 text-center">
@@ -289,10 +291,6 @@
       <button type="button" id="top_btn">
         <i class="fa fa-arrow-up" aria-hidden="true"></i>
         <span class="blind">상단으로</span>
-      </button>
-      <button type="button" class="darkmode-toggle-switch">
-        <i class="fa-solid fa-moon visible bright"></i>
-        <i class="fa-solid fa-sun visible dark"></i>
       </button>
     </div>
   </div>

@@ -137,8 +137,8 @@
 }
 
 /* 초기화 */
-html { overflow-y:scroll; font-size:62.5%; }
-body { margin:0; padding:0; font-size:1.2rem; font-family:'Malgun Gothic', dotum, sans-serif; background:var(--bodyBg) }
+html { overflow-y:scroll; font-size:80%; }
+body { margin:0; padding:0; font-size:1.0rem; font-family:'Malgun Gothic', dotum, sans-serif; background:var(--bodyBg) }
 html, form, fieldset, img { margin:0; padding:0; border:0 }
 h1, h2, h3, h4, h5, h6 { font-family:'Malgun Gothic', dotum, sans-serif }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block }
@@ -153,7 +153,7 @@ select { margin:0 }
 p { margin:0; padding:0; word-break:break-all }
 hr { display:none }
 pre { overflow-x:scroll; font-size:1.3rem }
-a { color:var(--fontColor); text-decoration:none }
+a { color:var(--fontColor); text-decoration:none ; }
 
 *, :after, :before { box-sizing:border-box; }
 

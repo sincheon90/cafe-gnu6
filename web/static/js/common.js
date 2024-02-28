@@ -36,7 +36,7 @@ function number_format(data)
     var cutlen = 3;
     var comma = ',';
     var i;
-    
+
     data = data + '';
 
     var sign = data.match(/^[\+\-]/);
@@ -370,7 +370,7 @@ var win_zip = function(frm_name, frm_zip, frm_addr1, frm_addr2, frm_addr3, frm_j
         if(of[frm_jibeon] !== undefined){
             of[frm_jibeon].value = data.userSelectedType;
         }
-        
+
         setTimeout(function(){
             $("#meta_viewport").attr("content", vContent);
             of[frm_addr2].focus();
@@ -753,7 +753,7 @@ function isDarkModeEnabled() {
     const isOsColorTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     const getUserTheme = () => (isUserColorTheme ? isUserColorTheme : isOsColorTheme);
     const initialTheme = getUserTheme();
-    
+
     if (initialTheme === 'dark') {
       document.documentElement.setAttribute('color-theme', 'dark');
     } else {
@@ -761,5 +761,7 @@ function isDarkModeEnabled() {
     }
 }
 
+
 // 로컬스토리지 데이터에따라 실시간 변경
 window.addEventListener('storage', isDarkModeEnabled);
+document.documentElement.setAttribute('color-theme', 'light');
