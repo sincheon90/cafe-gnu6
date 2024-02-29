@@ -41,12 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
   function navUpColorChange() {
     navbarText.forEach(function (button) {
       button.classList.add("text-white");
-      button.classList.remove("text-success");
+      button.classList.remove("text-menu");
     });
   }
   function navDownColorChange() {
     navbarText.forEach(function (button) {
-      button.classList.add("text-success");
+      button.classList.add("text-menu");
       button.classList.remove("text-white");
     });
   }

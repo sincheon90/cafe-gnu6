@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   var didScroll;
   var lastScrollTop = 0;
+  var over = false;
   var delta = 5;
   var navbar = document.querySelector("nav");
   var navbarSquare = document.querySelector(".navsquare"); // 상단바 네모
@@ -18,10 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   navbar.addEventListener("mouseover", function(){
     mouseOverNav();
+    over = true;
   })
 
   navbar.addEventListener("mouseout",function(){
     mouseOutNav();
+    over = false;
   })
 
   function mouseOutNav(){
@@ -58,12 +61,12 @@ document.addEventListener("DOMContentLoaded", function () {
   function navUpColorChange() {
     navbarText.forEach(function (button) {
       button.classList.add("text-white");
-      button.classList.remove("text-success");
+      button.classList.remove("text-menu");
     });
   }
   function navDownColorChange() {
     navbarText.forEach(function (button) {
-      button.classList.add("text-success");
+      button.classList.add("text-menu");
       button.classList.remove("text-white");
     });
   }
@@ -103,8 +106,11 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // Scroll Up
       if (st + window.innerHeight < Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) && window.scrollY < 20) {
-        navUp();
+        if (!over)
+        {
+          navUp();
         navUpColorChange();
+        }
       }
     }
 
