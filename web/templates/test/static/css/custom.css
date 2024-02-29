@@ -71,7 +71,7 @@ a.button {
 }
 .text-emp {
   color: rgba(255, 255, 255, 1);
-  color: #00b992;
+  color: #24B1AA;
   text-decoration-line: none;
 }
 .btnFade:hover {
@@ -90,4 +90,7 @@ a.button {
   border-radius: 8px; /* 테두리 모서리 둥글게 */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
   transition: all 0.3s ease; /* 부드러운 전환 효과 */
+}
+.text-menu{
+  color:#243332;
 }

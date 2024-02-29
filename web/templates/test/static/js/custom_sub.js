@@ -30,12 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     navSubDownColorChange()
   }
 
-  setInterval(function () {
-    if (didScroll) {
-      hasScrolled();
-      didScroll = false;
-    }
-  }, 50);
   function navUp() {
     navbarSquare.classList.add("shrink");
     navbarSquare.classList.remove("expanded");
