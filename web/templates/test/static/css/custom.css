@@ -97,3 +97,60 @@ a.button {
 .text-gray{
   color:#999999;
 }
+.text-menu-sub{
+  color:#273332;
+}
+
+.grade-title{
+    color: #fff;
+    padding: 0.7rem 2rem 0.7rem 2rem;
+    background-image: -webkit-linear-gradient(left, #7c4dff 0%, #33FFF5 100%);
+    background-image: linear-gradient(to right, #7c4dff 0%, #33FFF5 100%);
+    -webkit-transform: skew(-15deg);
+    transform: skew(-15deg);
+}
+
+.section-title {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+.section-title:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #b80000;
+}
+.section-title:after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #b80000;
+}
+
+.oneday_btn{
+  text-decoration-line: none;
+}
+
+.oneday_btn:hover{
+  text-decoration-line:underline;
+}
+
+.oneday_btn_clicked
+{
+  color: #fff;
+  padding: 0.7rem 0.7rem 0.7rem 2rem;
+  border-radius: 100vh;
+  background-image: -webkit-linear-gradient(right, #7c4dff 0%, #33FFF5 100%);
+  background-image: linear-gradient(to left, #7c4dff 0%, #33FFF5 100%);
+}

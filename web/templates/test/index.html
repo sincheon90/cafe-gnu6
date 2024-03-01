@@ -98,8 +98,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
-          <h2>이달의 추천 메뉴</h2>
-          <h3>놀다가 카페에 오신걸 환영합니다.</h3>
+          <h2 class="section-title">이달의 추천 메뉴</h2>
         </div>
       </div>
       <div class="owl-carousel owl-theme" style="height:50%">
@@ -149,7 +148,7 @@
     <div style="height:20vh">
       <div class="container">
         <div class="row">
-          <div class="col h2 mt-5 text-center">다가오는 공연</div>
+          <div class="col h2 mt-5 text-center section-title">다가오는 공연</div>
         </div>
       </div>
     </div>
@@ -159,21 +158,18 @@
           <div class="row py-5">
             <div class="col-md-8 col-lg-5">
               <!-- Date -->
-              <h3 class="text-xs text-primary">
-                <time datetime="2017-09-30">September 30, 2017</time>
-              </h3>
 
+              <div class="grade-title mb-2 d-inline-block">
+                <h2>
+                  2024월 03월 30일 토요일
+                </h2>
+              </div>
               <!-- Heading -->
-              <h2 class="mb-3 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum voluptas, aut ea quae!</h2>
-
-              <!-- Description -->
-              <p class="mb-6 text-white text-opacity-75">
-                Alias earum, labore doloremque iusto a modi et, dolorem veritatis iste quis ab. Facere est optio, voluptate molestias aspernatur impedit perferendis odit?
-              </p>
+              <h2 class="mb-3 text-white">모두가 함께 참여하는 놀다가 문화의 날입니다! 전문적인 밴드부터 취미 밴드까지 다양한 공연을 보실 수 있습니다!</h2>
 
               <!-- Button -->
-              <a class="btn btn-outline-primary text-white text-primary-hover" href="#section_reservation">
-                Reserve a table
+              <a class="btn btn-primary text-white " href="">
+                일정 확인하기
               </a>
             </div>
           </div>
@@ -231,17 +227,16 @@
     <section class="pt-md-9 py-5 border-bottom d-flex align-items-center">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
+          <div class="col-12 col-md-8 col-lg-6 text-center mb-5 section-title">
             <h2>원데이 클래스</h2>
           </div>
         </div>
         <div class="row text-center">
-          <h1>Menu</h1>
           <div class="text-center">
             <p class="d-inline-flex gap-1">
-              <a class="oneday_btn btn btn-primary underline" onclick="toggleCollapse('collapseAppetizers')">요리</a>
-              <a class="oneday_btn btn btn-primary" onclick="toggleCollapse('collapseMainCourse')">음악</a>
-              <a class="oneday_btn btn btn-primary " onclick="toggleCollapse('collapseDesserts')">기타</a>
+              <a class=" btn oneday_btn oneday_btn_clicked" onclick="toggleCollapse('collapseAppetizers')">요리</a>
+              <a class=" btn oneday_btn" onclick="toggleCollapse('collapseMainCourse')">음악</a>
+              <a class=" btn oneday_btn" onclick="toggleCollapse('collapseDesserts')">기타</a>
             </p>
           </div>
           <div class="collapse" id="collapseAppetizers">
@@ -705,7 +700,7 @@
         allOndayBtn.forEach(c => {
           c
             .classList
-            .remove("underline")
+            .remove("oneday_btn_clicked")
         })
         if (!isCollapsed) {
           collapse.style.display = 'block';
@@ -713,7 +708,7 @@
         event
           .currentTarget
           .classList
-          .add("underline");
+          .add("oneday_btn_clicked");
       }
       document
         .getElementById('collapseAppetizers')

@@ -37,53 +37,53 @@
             <div class="pe-4 navbar-nav nav-underline col-6 d-flex justify-content-between ">
               <div class="nav-item col-2">
                 <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="">회사소개</a>
+                  <a class="navsubbutton nav-link text-menu-sub" href="">회사소개</a>
                 </div>
                 <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="">ESG</a>
-                </div>
-              </div>
-              <div class="nav-item col-2">
-                <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="">음료</a>
-                </div>
-                <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="">빵</a>
+                  <a class="navsubbutton nav-link text-menu-sub" href="">ESG</a>
                 </div>
               </div>
               <div class="nav-item col-2">
                 <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="">교육신청</a>
+                  <a class="navsubbutton nav-link text-menu-sub" href="">음료</a>
+                </div>
+                <div class="row">
+                  <a class="navsubbutton nav-link text-menu-sub" href="">빵</a>
                 </div>
               </div>
               <div class="nav-item col-2">
                 <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="">대관신청</a>
+                  <a class="navsubbutton nav-link text-menu-sub" href="">교육신청</a>
                 </div>
               </div>
               <div class="nav-item col-2">
                 <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="/board/notice">공지사항</a>
-                </div>
-                <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="">이벤트</a>
-                </div>
-                <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="">일정</a>
-                </div>
-                <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="/board/donerwrite">후원</a>
-                </div>
-                <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="/board/livevideo">활동영상</a>
+                  <a class="navsubbutton nav-link text-menu-sub" href="">대관신청</a>
                 </div>
               </div>
               <div class="nav-item col-2">
                 <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="">자주하시는 질문</a>
+                  <a class="navsubbutton nav-link text-menu-sub" href="/board/notice">공지사항</a>
                 </div>
                 <div class="row">
-                  <a class="navsubbutton nav-link text-black-50" href="">고객의 소리</a>
+                  <a class="navsubbutton nav-link text-menu-sub" href="">이벤트</a>
+                </div>
+                <div class="row">
+                  <a class="navsubbutton nav-link text-menu-sub" href="">일정</a>
+                </div>
+                <div class="row">
+                  <a class="navsubbutton nav-link text-menu-sub" href="/board/donerwrite">후원</a>
+                </div>
+                <div class="row">
+                  <a class="navsubbutton nav-link text-menu-sub" href="/board/livevideo">활동영상</a>
+                </div>
+              </div>
+              <div class="nav-item col-2">
+                <div class="row">
+                  <a class="navsubbutton nav-link text-menu-sub" href="">자주하시는 질문</a>
+                </div>
+                <div class="row">
+                  <a class="navsubbutton nav-link text-menu-sub" href="">고객의 소리</a>
                 </div>
               </div>
             </div>
@@ -124,18 +124,9 @@
               <a class="navbutton fs-5 nav-link text-white font-weight-bold fw-bold" href="/bbs/faq">고객지원</a>
             </div>
           </div>
-          <div class="col-3">
-            <div class="row text-end mt-2">
-              <div class="row">
-                {% if request.state.login_member %}
-                  <div class="col text-emp">
-                    어서오세요
-                    {{ member.mb_nick if member is defined else '' }}
-                    님
-                  </div>
-                {% endif %}
-              </div>
-              <div class="row">
+          <div class="col-3 m-0" style="height:36.8px">
+            <div class="row text-end h-100">
+              <div class="row h-50">
                 {% if request.state.login_member %}
                   <div class="col">
                     <a class="text-emp" href="/bbs/logout">로그아웃</a>
@@ -145,6 +136,15 @@
                   <div class="col">
                     <a class="text-emp" href="/bbs/login">로그인</a>
                     <a class="text-emp" href="/bbs/register">회원가입</a>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="row h-50">
+                {% if request.state.login_member %}
+                  <div class="col text-emp">
+                    어서오세요
+                    {{ member.mb_nick if member is defined else '' }}
+                    님
                   </div>
                 {% endif %}
               </div>
