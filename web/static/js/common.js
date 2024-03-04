@@ -749,19 +749,19 @@ function handleDarkMode(e) {
 
 // Dark mode 상태 확인 함수
 function isDarkModeEnabled() {
-    const isUserColorTheme = localStorage.getItem('color-theme');
-    const isOsColorTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    const getUserTheme = () => (isUserColorTheme ? isUserColorTheme : isOsColorTheme);
-    const initialTheme = getUserTheme();
+    //const isUserColorTheme = localStorage.getItem('color-theme');
+    // const isOsColorTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    // const getUserTheme = () => (isUserColorTheme ? isUserColorTheme : isOsColorTheme);
+    // const initialTheme = getUserTheme();
 
-    if (initialTheme === 'dark') {
-      document.documentElement.setAttribute('color-theme', 'dark');
-    } else {
-      document.documentElement.setAttribute('color-theme', 'light');
-    }
+    // if (initialTheme === 'light') {
+    //   document.documentElement.setAttribute('color-theme', 'light');
+    // } else {
+    //   document.documentElement.setAttribute('color-theme', 'dark');
+    // }
+    document.documentElement.setAttribute('color-theme', 'light');
 }
 
 
 // 로컬스토리지 데이터에따라 실시간 변경
 window.addEventListener('storage', isDarkModeEnabled);
-document.documentElement.setAttribute('color-theme', 'light');

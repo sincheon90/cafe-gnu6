@@ -56,11 +56,11 @@ CKEDITOR.editorConfig = function( config ) {
 	if( typeof(editor_form_name) != "undefined" && editor_form_name != "") {
 		up_url += "&editor_form_name="+editor_form_name;
 	}
-    
+
 	// 업로드 페이지 URL 선언
 	config.filebrowserImageUploadUrl = up_url;
 
-	// 이미지 다이얼로그 수정 
+	// 이미지 다이얼로그 수정
 	CKEDITOR.on('dialogDefinition', function (ev) {
 		let dialogName = ev.data.name;
 		let dialog = ev.data.definition.dialog;
@@ -71,8 +71,8 @@ CKEDITOR.editorConfig = function( config ) {
 			});
 			dialogDefinition.removeContents('advanced'); // 자세히탭 제거
 			dialogDefinition.removeContents('Link'); // 링크탭 제거
-			
-			var infoTab = dialogDefinition.getContents('info');   
+
+			var infoTab = dialogDefinition.getContents('info');
 			infoTab.remove('txtHSpace');
 			infoTab.remove('txtVSpace');
 			infoTab.remove('htmlPreview');	// 미리보기 제거
@@ -97,4 +97,3 @@ CKEDITOR.editorConfig = function( config ) {
 		config.contentsCss = [CKEDITOR.getUrl('darkmode.css')];
     }
 };
-

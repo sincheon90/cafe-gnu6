@@ -26,15 +26,11 @@
       <div style="height:76px"></div>
       <div class="conatiner">
         <div class="container">
-          <a class="navbar-brand d-lg-none" href="">noldaga</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
           <div class="collapse navbar-collapse row text-center ">
             <a class="p-0 navbar-brand text-center d-none d-lg-flex mx-lg-auto fs-1 title text-emp col-3">
               <div class="col-12 text-start"></div>
             </a>
-            <div class="pe-4 navbar-nav nav-underline col-6 d-flex justify-content-between ">
+            <div class="navbar-nav nav-underline col-6 d-flex justify-content-between pe-0">
               <div class="nav-item col-2">
                 <div class="row">
                   <a class="navsubbutton nav-link text-menu-sub" href="">회사소개</a>
@@ -94,19 +90,28 @@
     </div>
     <div class="container px-0 py-4">
       <div class="container">
-        <a class="navbar-brand d-lg-none" href="">NOLDAGA</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="row d-lg-none">
+          <div class="col-6">
+            <a class="navbar-brand text-start text-emp title fs-1" href="/">NOLDAGA</a>
+          </div>
+          <div class="col-6 text-end">
+            <a class=" border-primary rounded" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewbox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
         <div class="collapse navbar-collapse row text-center" id="navbarCollapse">
           <a class="p-0 navbar-brand text-center d-none d-lg-flex mx-lg-auto fs-1 title text-emp col-3" href="/">
             <div class="col-12 text-start">
               NOLDAGA
             </div>
           </a>
-          <div class="pe-4 navbar-nav nav-underline col-6 d-flex justify-content-between ">
-            <div class="nav-item col-2">
-              <a class="navbutton fs-5 nav-link text-white font-weight-bold fw-bold" href="{{ url_for('content_view', co_id='company') }}">소개</a>
+          <div class="navbar-nav nav-underline col-lg-6 col-xs-12 d-flex justify-content-between pe-0">
+            <div class="nav-item col-lg-2 col-xs-12">
+              <a class="navbutton fs-5 nav-link text-white font-weight-bold fw-bold " href="{{ url_for('content_view', co_id='company') }}">소개</a>
             </div>
             <div class="nav-item col-2">
               <a class="navbutton fs-5 nav-link text-white font-weight-bold fw-bold" href="">메뉴</a>
@@ -154,7 +159,121 @@
       </div>
     </div>
   </nav>
-
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title title text-emp" id="offcanvasExampleLabel">NOLDAGA</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+              소개
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="">회사소개</a>
+              </div>
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="">ESG</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              메뉴
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="">음료</a>
+              </div>
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="">빵</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              교육
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="">교육신청</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+              대관
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="">대관신청</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+              소식
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="/board/notice">공지사항</a>
+              </div>
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="">이벤트</a>
+              </div>
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="">일정</a>
+              </div>
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="/board/donerwrite">후원</a>
+              </div>
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="/board/livevideo">활동영상</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+              고객지원
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="">자주하시는 질문</a>
+              </div>
+              <div class="row">
+                <a class="navsubbutton nav-link text-menu-sub" href="">고객의 소리</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- } 상단 끝 -->
 
   {% if errors %}

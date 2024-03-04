@@ -12,62 +12,90 @@ document.addEventListener("DOMContentLoaded", function () {
     navDownColorChange();
   }
 
-  navbar.addEventListener("mouseover", function(){
-    mouseOverNav();
+  navbar.addEventListener("mouseover", function () {
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      mouseOverNav();
+    }
+
   })
 
-  navbar.addEventListener("mouseout",function(){
-    mouseOutNav();
+  navbar.addEventListener("mouseout", function () {
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      mouseOutNav();
+    }
   })
 
-  function mouseOutNav(){
-    subNavUp();
-    navSubUpColorChange();
+  function mouseOutNav() {
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      subNavUp();
+      navSubUpColorChange();
+    }
   }
 
-  function mouseOverNav(){
-    subNavDown();
-    navSubDownColorChange()
+  function mouseOverNav() {
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      subNavDown();
+      navSubDownColorChange()
+    }
+
   }
 
   function navUp() {
-    navbarSquare.classList.add("shrink");
-    navbarSquare.classList.remove("expanded");
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      navbarSquare.classList.add("shrink");
+      navbarSquare.classList.remove("expanded");
+    }
   }
   function navDown() {
-    navbarSquare.classList.add("expanded");
-    navbarSquare.classList.remove("shrink");
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      navbarSquare.classList.add("expanded");
+      navbarSquare.classList.remove("shrink");
+    }
   }
   function navUpColorChange() {
-    navbarText.forEach(function (button) {
-      button.classList.add("text-white");
-      button.classList.remove("text-menu");
-    });
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      navbarText.forEach(function (button) {
+        button.classList.add("text-white");
+        button.classList.remove("text-menu");
+      });
+    }
   }
   function navDownColorChange() {
-    navbarText.forEach(function (button) {
-      button.classList.add("text-menu");
-      button.classList.remove("text-white");
-    });
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      navbarText.forEach(function (button) {
+        button.classList.add("text-menu");
+        button.classList.remove("text-white");
+      });
+    }
   }
-  function subNavUp(){
-    navbarSquraeSub.classList.remove("expanded");
-    navbarSquraeSub.classList.add("shrink");
+  function subNavUp() {
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      navbarSquraeSub.classList.remove("expanded");
+      navbarSquraeSub.classList.add("shrink");
+    }
   }
   function subNavDown() {
-    navbarSquraeSub.classList.add("expanded");
-    navbarSquraeSub.classList.remove("shrink");
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      navbarSquraeSub.classList.add("expanded");
+      navbarSquraeSub.classList.remove("shrink");
+    }
+
   }
   function navSubUpColorChange() {
-    navbarTextSub.forEach(function (button) {
-      button.classList.add("text-white");
-      button.classList.remove("text-black-50");
-    });
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      navbarTextSub.forEach(function (button) {
+        button.classList.add("text-white");
+        button.classList.remove("text-black-50");
+      });
+    }
+
   }
   function navSubDownColorChange() {
-    navbarTextSub.forEach(function (button) {
-      button.classList.add("text-black-50");
-      button.classList.remove("text-white");
-    });
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      navbarTextSub.forEach(function (button) {
+        button.classList.add("text-black-50");
+        button.classList.remove("text-white");
+      });
+    }
   }
 });
