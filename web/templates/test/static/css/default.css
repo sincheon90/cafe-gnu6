@@ -523,7 +523,7 @@ a.gnb_2da:hover { color:#fff; background:#285981;-moz-transition:all 0.3s ease-o
 .cke_sc_def dd { width:30% }
 
 /* 버튼 */
-a.btn,.btn { line-height:35px; height:35px; padding:0 10px; text-align:center; font-weight:bold; border:0; font-size:1.7rem;transition:background-color 0.3s ease-out }
+a.btn,.btn { line-height:35px; height:35px; padding:0 10px; text-align:center; font-weight:bold; border:0; font-size:1.5rem;transition:background-color 0.3s ease-out }
 
 a.btn01 { display:inline-block; padding:7px; border:1px solid #ccc; background:#fafafa; color:#000; text-decoration:none; vertical-align:middle }
 a.btn01:focus, a.btn01:hover { text-decoration:none }
@@ -1147,7 +1147,7 @@ html.no-overflowscrolling #autosave_pop { height:auto; max-height:10000px !impor
 
 #bo_v_share { position:relative; padding:20px 0 }
 #bo_v_share:after { display:block; visibility:hidden; clear:both; content:"" }
-#bo_v_share .btn { padding:0 10px; color:var(--bovTitColor); font-weight:normal; font-size:1.2rem; width:80px; line-height:35px; height:35px; border:var(--shareBorder); border-radius:5px }
+#bo_v_share .btn { padding:0 10px; color:var(--bovTitColor); font-weight:normal; font-size:1.2rem; line-height:35px; height:35px; border:var(--shareBorder); border-radius:5px }
 #bo_v_share .btn:hover { background:var(--bovHover) }
 #bo_v_share .btn svg { margin-right:5px; color:var(--bovTitColor); vertical-align:middle }
 
