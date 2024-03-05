@@ -61,12 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   function navDownColorChange() {
-    if (window.matchMedia("(min-width: 992px)").matches) {
-      navbarText.forEach(function (button) {
-        button.classList.add("text-menu");
-        button.classList.remove("text-white");
-      });
-    }
+    navbarText.forEach(function (button) {
+      button.classList.add("text-menu");
+      button.classList.remove("text-white");
+    })
   }
   function subNavUp() {
     if (window.matchMedia("(min-width: 992px)").matches) {
@@ -82,20 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
   function navSubUpColorChange() {
-    if (window.matchMedia("(min-width: 992px)").matches) {
-      navbarTextSub.forEach(function (button) {
-        button.classList.add("text-white");
-        button.classList.remove("text-black-50");
-      });
-    }
+
 
   }
   function navSubDownColorChange() {
-    if (window.matchMedia("(min-width: 992px)").matches) {
-      navbarTextSub.forEach(function (button) {
-        button.classList.add("text-black-50");
-        button.classList.remove("text-white");
-      });
-    }
+
   }
 });
