@@ -36,6 +36,7 @@ services:
     volumes:
       - ./web/:/app/ #: 마운트기호
       - ./.env:/app/.env
+      - ./myt/:/app/templates/myt/
     ports:
       - 44443:44443
     restart: always
