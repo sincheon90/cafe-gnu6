@@ -24,7 +24,9 @@ services:
     restart: always
 
   web:
-    build: ./web/
+    build:
+      context: ./web/
+      dockerfile: ../Dockerfile
     env_file:
       - ./.env
     command:
