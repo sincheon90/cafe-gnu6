@@ -12,7 +12,7 @@
 {% block content %}
   {% set is_admin = get_admin_type(request, request.state.login_member.mb_id, board = board) %}
   {% set sca = request.query_params.sca %}
-  {% set sod_reverse = "asc" if request.query_params.sod == "desc" else 
+  {% set sod_reverse = "asc" if request.query_params.sod == "desc" else
     "desc" %}
 
   <!-- 게시판 목록 시작 { -->
@@ -150,21 +150,16 @@
                     <a href="{{ request.url.replace_query_params(sca=write.ca_name) }}" class="bo_cate_link">{{ write.ca_name }}</a>
                   {% endif %}
 
-                  <a href="{{ url_for('read_post', bo_table=board.bo_table, wr_id=write.wr_id)|set_query_params(request) }}" class="bo_tit">
+                  <a href="{{ url_for('read_post', bo_table=board.bo_table, wr_id=write.wr_id)|set_query_params(request) }}" class="bo_tit" style="text-decoration-line:none;">
                     {% if write.wr_reply %}
                       <img src="{{ url_for('static', path=" /img/icon_reply.gif") }}" class="icon_reply" alt="답변글">
                     {% endif %}
                     {{ write.subject }}
                     {% if write.icon_new %}
                       <span class="new_icon">N<span class="blind">새글</span></span>{% endif %}
-                    {% if write.icon_hot %}
-                      <i class="fa fa-heart" aria-hidden="true"></i>
-                    {% endif %}
                     <!-- TODO: 비밀글 아이콘 -->
-                    {% if write.wr_comment %}
-                      <span class="blind">댓글</span><span class="cnt_cmt">{{ write.wr_comment }}</span><span class="blind">개</span>{% endif %}
                   </a>
-                  <span class="bo_cnt">{{ write.wr_content|striptags|truncate(68, False, '...', 0)|safe }}</span>
+                  <span class="bo_cnt">{{ write.wr_1 }} 원</span>
                 </div>
               </div>
             </div>
@@ -221,7 +216,7 @@
         var f = document.fboardlist;
 
         for (var i = 0; i < f.length; i++) {
-          if (f.elements[i].name == "chk_wr_id[]") 
+          if (f.elements[i].name == "chk_wr_id[]")
             f
               .elements[i]
               .checked = sw;
@@ -232,10 +227,10 @@
         var chk_count = 0;
 
         for (var i = 0; i < f.length; i++) {
-          if (f.elements[i].name == "chk_wr_id[]" && f.elements[i].checked) 
+          if (f.elements[i].name == "chk_wr_id[]" && f.elements[i].checked)
             chk_count++;
           }
-        
+
         if (!chk_count) {
           alert(document.pressed + "할 게시물을 하나 이상 선택하세요.");
           return false;
@@ -252,9 +247,9 @@
         }
 
         if (document.pressed == "선택삭제") {
-          if (!confirm("선택한 게시물을 정말 삭제하시겠습니까?\n\n한번 삭제한 자료는 복구할 수 없습니다\n\n답변글이 있는 게시글을 선택하신 경우\n답변글도 선택하셔야 게시글이 삭제됩니다.")) 
+          if (!confirm("선택한 게시물을 정말 삭제하시겠습니까?\n\n한번 삭제한 자료는 복구할 수 없습니다\n\n답변글이 있는 게시글을 선택하신 경우\n답변글도 선택하셔야 게시글이 삭제됩니다."))
             return false;
-          
+
           f.removeAttribute("target");
           f.action = "{{ url_for('list_delete', bo_table=board.bo_table)|set_query_params(request)|safe }}";
         }
