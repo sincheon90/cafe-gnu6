@@ -6,13 +6,35 @@
   {{ current_page }}
   페이지{% endblock title %}
 {% block subtitle %}
-  {{ board.subject }}
+<header style="z-index: 100; height: 350px;">
+  <div style="
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 350px;
+        z-index: -100;
+        overflow:hidden;" class="dark-image">{{board.bo_content_head|safe}}
+  </div>
+
+  <div class="d-flex flex-column min-vh-50 bg-black-50 " style="height: 350px;padding-top:100px">
+    <div class="container my-auto">
+      <div class="row justify-content-center align-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center">
+          <h1 class="text-xs text-white fw-bold" style="">
+            {{board.subject}}
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 {% endblock subtitle %}
 
 {% block content %}
   {% set is_admin = get_admin_type(request, request.state.login_member.mb_id, board = board) %}
   {% set sca = request.query_params.sca %}
-  {% set sod_reverse = "asc" if request.query_params.sod == "desc" else 
+  {% set sod_reverse = "asc" if request.query_params.sod == "desc" else
     "desc" %}
 
   <!-- 게시판 목록 시작 { -->
@@ -376,7 +398,7 @@
         var f = document.fboardlist;
 
         for (var i = 0; i < f.length; i++) {
-          if (f.elements[i].name == "chk_wr_id[]") 
+          if (f.elements[i].name == "chk_wr_id[]")
             f
               .elements[i]
               .checked = sw;
@@ -387,10 +409,10 @@
         var chk_count = 0;
 
         for (var i = 0; i < f.length; i++) {
-          if (f.elements[i].name == "chk_wr_id[]" && f.elements[i].checked) 
+          if (f.elements[i].name == "chk_wr_id[]" && f.elements[i].checked)
             chk_count++;
           }
-        
+
         if (!chk_count) {
           alert(document.pressed + "할 게시물을 하나 이상 선택하세요.");
           return false;
@@ -407,9 +429,9 @@
         }
 
         if (document.pressed == "선택삭제") {
-          if (!confirm("선택한 게시물을 정말 삭제하시겠습니까?\n\n한번 삭제한 자료는 복구할 수 없습니다\n\n답변글이 있는 게시글을 선택하신 경우\n답변글도 선택하셔야 게시글이 삭제됩니다.")) 
+          if (!confirm("선택한 게시물을 정말 삭제하시겠습니까?\n\n한번 삭제한 자료는 복구할 수 없습니다\n\n답변글이 있는 게시글을 선택하신 경우\n답변글도 선택하셔야 게시글이 삭제됩니다."))
             return false;
-          
+
           f.removeAttribute("target");
           f.action = "{{ url_for('list_delete', bo_table=board.bo_table)|set_query_params(request)|safe }}";
         }

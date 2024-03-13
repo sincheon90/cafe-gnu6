@@ -8,7 +8,31 @@
 {% endblock head %}
 
 {% block title %}{{ write.wr_subject|truncate(20, False, '...', 0) }} > {{ board.subject }}{% endblock title %}
-{% block subtitle %}{{ board.subject }}{% endblock subtitle %}
+{% block subtitle %}
+    <header style="z-index: 100; height: 350px;">
+      <div style="
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 350px;
+            z-index: -100;
+            overflow:hidden;" class="dark-image">{{board.bo_content_head|safe}}
+      </div>
+
+      <div class="d-flex flex-column min-vh-50 bg-black-50 " style="height: 350px;padding-top:100px">
+        <div class="container my-auto">
+          <div class="row justify-content-center align-center">
+            <div class="col-12 col-md-8 col-lg-6 text-center">
+              <h1 class="text-xs text-white fw-bold" style="">
+                {{board.subject}}
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+{% endblock subtitle %}
 
 {% block content %}
 {% set board_config=board_config(request, board) %}
@@ -100,7 +124,7 @@
                                 </a>
                             </li>
                             {% endif %}
-                        </ul> 
+                        </ul>
                     </li>
                     {% endif %}
                 </ul>
@@ -184,7 +208,7 @@
         {% for file in files %}
             <li>
                 <i class="fa fa-folder-open" aria-hidden="true"></i>
-                <a href="/board/{{ board.bo_table }}/{{ write.wr_id }}/download/{{ file.bf_no }}" class="view_file_download"> 
+                <a href="/board/{{ board.bo_table }}/{{ write.wr_id }}/download/{{ file.bf_no }}" class="view_file_download">
                     <strong>{{ file.bf_source }}</strong>  ({{ file.bf_filesize|filesizeformat }})
                 </a>
                 <br>
@@ -194,7 +218,7 @@
         </ul>
     </section>
 
-    
+
     <!-- 관련링크 시작 { -->
     {% if links %}
     <section id="bo_v_link">
@@ -236,8 +260,8 @@
               <span class="nb_cont">{{ next.wr_subject }}</span>
               <span class="nb_date">{{ next.wr_datetime }}</span>
             </p>
-            <i class="fa fa-chevron-down" aria-hidden="true"></i>            
-          </a>                                     
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          </a>
         </li>
         {% endif %}
     </ul>
@@ -278,7 +302,7 @@
                         <time datetime="{{ comment.wr_datetime|datetime_format }}">{{ comment.wr_datetime|datetime_format }}</time>
                     </span>
                 </header>
-        
+
                 <div class="cmt_contents">
                     <p>
                         {% if comment.is_secret %}
@@ -317,12 +341,12 @@
                 </ul>
             </div>
             <script>
-                $(function() {			    
+                $(function() {
                 // 댓글 옵션창 열기
                 $(".btn_cm_opt").on("click", function(){
                     $(this).parent("div").children(".bo_vc_act").show();
                 });
-                    
+
                 // 댓글 옵션창 닫기
                 $(document).mouseup(function (e){
                     var container = $(".bo_vc_act");
@@ -343,7 +367,7 @@
         <aside id="bo_vc_w" class="bo_vc_w">
             <h2>댓글쓰기</h2>
             <form name="fviewcomment" id="fviewcomment" method="post" autocomplete="off"
-                action="{{ url_for('write_comment_update', bo_table=board.bo_table)|set_query_params(request) }}" 
+                action="{{ url_for('write_comment_update', bo_table=board.bo_table)|set_query_params(request) }}"
                 onsubmit="return fviewcomment_submit(this);">
                 <input type="hidden" name="w" id="w" value="c">
                 <input type="hidden" name="bo_table" value="{{ board.bo_table }}">
@@ -355,7 +379,7 @@
                 <input type="hidden" name="spt" value="{{ request.query_params.spt }}">
                 <input type="hidden" name="page" value="{{ request.query_params.page }}">
                 <input type="hidden" name="token" value="">
-                
+
                 {% if board.bo_comment_min and board.bo_comment_max %}
                 <script> check_byte('wr_content', 'char_count'); </script>
                 <strong id="char_cnt"><span id="char_count">0</span>글자</strong>
@@ -389,7 +413,7 @@
                             <fieldset id="captcha" class="captcha">{% include captcha_widget(request) ignore missing %}</fieldset>
                             <!-- Captcha End -->
                         {% endif %}
-                        
+
 
                         <span class="bo_vc_secret chk_box">
                             <input type="checkbox" name="wr_secret" value="secret" id="wr_secret" class="selec_chk">
@@ -510,7 +534,7 @@
                 document.getElementById(el_id).appendChild(respond);
                 //입력값 초기화
                 document.getElementById('wr_content').value = '';
-                
+
                 // 댓글 수정
                 if (work == 'cu')
                 {
@@ -548,7 +572,7 @@
         <!-- } 댓글 쓰기 끝 -->
     {% endif %}
     <script>
-    jQuery(function($) {            
+    jQuery(function($) {
         //댓글열기
         $(".cmt_btn").click(function(e){
             e.preventDefault();

@@ -6,7 +6,30 @@
 {% block title %}{{ board.subject }}
   {{ current_page }}
   페이지{% endblock title %}
-{% block subtitle %}{{ board.subject }}
+{% block subtitle %}
+    <header style="z-index: 100; height: 350px;">
+      <div style="
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 350px;
+            z-index: -100;
+            overflow:hidden;" class="dark-image">{{board.bo_content_head|safe}}
+      </div>
+
+      <div class="d-flex flex-column min-vh-50 bg-black-50 " style="height: 350px;padding-top:100px">
+        <div class="container my-auto">
+          <div class="row justify-content-center align-center">
+            <div class="col-12 col-md-8 col-lg-6 text-center">
+              <h1 class="text-xs text-white fw-bold" style="">
+                {{board.subject}}
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 {% endblock subtitle %}
 
 {% block content %}

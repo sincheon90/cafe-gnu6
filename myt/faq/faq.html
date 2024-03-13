@@ -3,21 +3,34 @@
 {% block title %}{{ faq_master.fm_subject }}
 {% endblock title %}
 {% block subtitle %}
-  {{ faq_master.fm_subject }}
-{% endblock subtitle %}
+    <header style="z-index: 100; height: 350px;">
+      <div style="
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 350px;
+            z-index: -100;
+            overflow:hidden;" class="dark-image">{{faq_master.fm_head_html|safe}}
+      </div>
 
+      <div class="d-flex flex-column min-vh-50 bg-black-50 " style="height: 350px;padding-top:100px">
+        <div class="container my-auto">
+          <div class="row justify-content-center align-center">
+            <div class="col-12 col-md-8 col-lg-6 text-center">
+              <h1 class="text-xs text-white fw-bold" style="">
+                {{ faq_master.fm_subject }}
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+{% endblock subtitle %}
 {% block content %}
   {% set stx = request
     .query_params
     .get("stx", "") %}
-
-  <!-- FAQ 시작 { -->
-  {% if fm_himg_url %}
-    <div id="faq_himg" class="faq_img">
-      <img src="{{ fm_himg_url }}" alt="">
-    </div>
-  {% endif %}
-  <div id="faq_hhtml">{{ faq_master.fm_head_html|default('', true)|safe }}</div>
 
   <fieldset id="faq_sch">
     <legend>FAQ 검색</legend>

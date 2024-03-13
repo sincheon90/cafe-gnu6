@@ -262,15 +262,15 @@
           function html_auto_br(obj) {
             if (obj.checked) {
               result = confirm("자동 줄바꿈을 하시겠습니까?\n\n자동 줄바꿈은 게시물 내용중 줄바뀐 곳을<br>태그로 변환하는 기능입니다.");
-              if (result) 
+              if (result)
                 obj.value = "2";
-              else 
+              else
                 obj.value = "1";
               }
-            else 
+            else
               obj.value = "";
             }
-          
+
           function fwrite_submit(f) {
             f.token.value = generate_token();
 
