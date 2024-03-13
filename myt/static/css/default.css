@@ -1267,7 +1267,7 @@ html.no-overflowscrolling #autosave_pop { height:auto; max-height:10000px !impor
 #bo_gall .gall_now .gall_text_href a { color:#ff3061 }
 
 #bo_gall .gall_href a:link, #bo_gall .gall_href a:focus, #bo_gall .gall_href a:hover { text-decoration:none }
-#bo_gall .gall_img { border-bottom:1px solid var(--noImgBg); text-align:center; overflow:hidden }
+#bo_gall .gall_img { text-align:center; overflow:hidden }
 #bo_gall .gall_img a,#bo_gall .gall_img .no_image,#bo_gall .gall_img .is_notice { display:block }
 #bo_gall .gall_img img, #bo_gall .gall_img video { max-width:100%; height:auto !important }
 #bo_gall .gall_img span { display:inline-block; background:var(--noImgBg); text-align:center; text-transform:uppercase; font-weight:bold; font-size:1.5rem; color:#777 }
