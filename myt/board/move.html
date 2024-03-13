@@ -60,7 +60,7 @@
                 window.close();
             });
         });
-        
+
         function all_checked(sw) {
             var f = document.fboardmoveall;
             for (var i=0; i < f.length; i++) {
@@ -68,7 +68,7 @@
                     f.elements[i].checked = sw;
             }
         }
-        
+
         function fboardmoveall_submit(f)
         {
             var check = false;
@@ -85,16 +85,16 @@
                     }
                 }
             }
-        
+
             if (!check) {
                 alert('게시물을 ' + f.act.value + '할 게시판을 한개 이상 선택해 주십시오.');
                 return false;
             }
 
             f.token.value = generate_token();
-        
+
             document.getElementById('btn_submit').disabled = true;
-        
+
             f.action = "{{ url_for('move_update') }}";
             return true;
         }
