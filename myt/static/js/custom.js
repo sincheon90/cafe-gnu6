@@ -55,17 +55,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }, 50);
   function navUp() {
-    if (window.matchMedia("(min-width: 992px)").matches) {
       navbarSquare.classList.add("shrink");
       navbarSquare.classList.remove("expanded");
-    }
 
   }
   function navDown() {
-    if (window.matchMedia("(min-width: 992px)").matches) {
       navbarSquare.classList.add("expanded");
       navbarSquare.classList.remove("shrink");
-    }
+
   }
   function navUpColorChange() {
     if (window.matchMedia("(min-width: 992px)").matches) {
@@ -121,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!over)
         {
           navUp();
-        navUpColorChange();
+          navUpColorChange();
         }
       }
     }
