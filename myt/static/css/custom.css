@@ -11,6 +11,13 @@
   height: 100vh;
 }
 
+.pagination { display:flex; justify-content: center; align-items: center; gap:3px; }
+.pagination .page { display:inline-block; padding:0 5px; min-width:30px; height:30px; line-height:28px; border-radius:3px; border:1px solid var(--pgBg); background:var(--pgBg); color:#959595; font-size:1.3rem; text-align:center; text-decoration:none }
+.pagination .page:hover,
+.pagination .page:focus { background-color:#24B1AA; border:1px solid var(--pgBg) }
+.pagination .current,
+.pagination .current:hover,
+.pagination .current:focus { background-color:#24B1AA; border:1px solid #24B1AA; color:#fff; font-weight:bold; }
 
 @font-face {
   font-family: 'Hakgrounded-startyoansimWoojuR';
@@ -19,8 +26,6 @@
 
   font-style: normal;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap')
 
 body {
   font-family: 'HakgyoansimWoojuR', sans-serif;

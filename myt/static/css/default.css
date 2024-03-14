@@ -190,7 +190,7 @@ input[type=text]:focus,input[type=password]:focus, textarea:focus,select:focus {
 
 #gnb .gnb_wrap,
 #container_wr,
-#ft_wr { max-width:1200px; width: 100%; }
+#ft_wr { max-width:100%; width: 100%; }
 
 /* 상단 레이아웃 */
 #hd { background:var(--wrapperBg); padding-top: 10px; }
