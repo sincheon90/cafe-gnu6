@@ -150,7 +150,7 @@
               <th scope="col">제목</th>
               <th scope="col">글쓴이</th>
               <th scope="col">
-                <a href="{{ request.url.include_query_params(sst=" wr_hit", sod=sod_reverse) }}">조회</a>
+                조회
               </th>
               {% if board.bo_use_good %}
                 <th scope="col">
@@ -163,7 +163,7 @@
                 </th>
               {% endif %}
               <th scope="col">
-                <a href="{{ request.url.include_query_params(sst=" wr_datetime", sod=sod_reverse) }}">날짜</a>
+                날짜
               </th>
             </tr>
           </thead>

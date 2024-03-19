@@ -76,16 +76,7 @@
           <h2 class="section-title">이달의 추천 메뉴</h2>
         </div>
       </div>
-      <div class="owl-carousel owl-theme" style="height:50%">
-        <div class="item">
-          <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
-        </div>
-        <div class="item">
-          <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
-        </div>
-        <div class="item">
-          <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
-        </div>
+      <div class="owl-carousel owl-theme mb-4" style="height:50%">
         <div class="item">
           <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
         </div>
@@ -206,17 +197,17 @@
   <script>
     $('.owl-carousel').owlCarousel({
       loop: true,
-      margin: 10,
+      margin: 20,
       nav: true,
       responsive: {
         0: {
           items: 1
         },
-        600: {
-          items: 3
+        768:{
+          items:3
         },
         1000: {
-          items: 5
+          items: 4
         }
       }
     })

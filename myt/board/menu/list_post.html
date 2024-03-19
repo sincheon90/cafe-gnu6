@@ -155,7 +155,7 @@
               </div>
               <div class="gall_con">
                 <div class="gall_img" style="{% if gallery_height > 0 %}height:{{ gallery_height }}px;max-height:{{ gallery_height }}px{% endif %}">
-                  <a href="{{ url_for('read_post', bo_table=board.bo_table, wr_id=write.wr_id)|set_query_params(request) }}">
+
                     {% if write.wr_id | string in board.bo_notice %}
                       <span class="is_notice" style="{{ line_height_style }}">공지</span>
                     {% else %}
@@ -166,7 +166,7 @@
                         <span class="no_image" style="{{ line_height_style }}">no image</span>
                       {% endif %}
                     {% endif %}
-                  </a>
+
                 </div>
                 <div class="gall_text_href">
                   {% if write.ca_name %}
