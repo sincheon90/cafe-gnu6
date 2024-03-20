@@ -25,10 +25,24 @@
     </div>
   </div>
 </header>
+{% set is_admin = get_admin_type(request, request.state.login_member.mb_id, board = board) %}
+{% if is_admin %}
+<input type="hidden" name="token_idx" id="token_idx" value='true'>
+{% else %}
+<input type="hidden" name="token_idx" id="token_idx" value='false'>
+{% endif %}
+
 {% endblock subtitle %}
 {% block content %}
 
   <article id="ctt" class="ctt_{{ content.co_id }}">
+    {% set is_admin = get_admin_type(request, request.state.login_member.mb_id, board = board) %}
+    {% if is_admin %}
+    <div id="head" class="text-center">
+      <button id="save_btn" class="btn btn-primary">저장</button>
+      <button id="add_btn" class="btn btn-primary">일정 추가</button>
+    </div>
+    {% endif %}
     <div id="ctt_con">
       {{ content.co_content|safe }}
     </div>
@@ -39,72 +53,194 @@
       <img src="{{ co_timg_url }}" alt=""/>
     </div>
   {% endif %}
+  <div class="modal fade" id="scheduleModal-c" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modal-title-c">일정 추가</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <label for="title-c" class="form-label">타이틀</label>
+          <input type="text" id="title-c" class="form-control">
+          <label for="start-c" class="form-label">시작 시간</label>
+          <input type="datetime-local" id="start-c"  class="form-control">
+          <label for="end-c" class="form-label">종료 시간</label>
+          <input type="datetime-local" id="end-c" class="form-control">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+          <button type="button" id="create_btn" class="btn btn-primary">저장</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="scheduleModal-u" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modal-title-u">일정 수정</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <label for="title-u" class="form-label">타이틀</label>
+          <input type="text" id="title-u" class="form-control">
+          <label for="start-u" class="form-label">시작 시간</label>
+          <input type="datetime-local" id="start-u"  class="form-control">
+          <label for="end-u" class="form-label">종료 시간</label>
+          <input type="datetime-local" id="end-u" class="form-control">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+          <button type="button" id="remove_btn" class="btn btn-danger">삭제</button>
+          <button type="button" id="update_btn" class="btn btn-primary">저장</button>
+        </div>
+        <input type="hidden" id="cal-id" value="">
+      </div>
+    </div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.11/index.global.js" integrity="sha512-f9WyGYcRzTKXCWy0pxm+qRi/yK2s4MpPEvAZMMYmHUKBERiDJ5uKVjn2Q142bpfkQ/+dE3CH5P9J3Z87kxdnNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment-with-locales.min.js" integrity="sha512-4F1cxYdMiAW98oomSLaygEwmCnIP38pb4Kx70yQYqRwLVCs3DbRumfBq82T08g/4LJ/smbFGFpmeFlQgoDccgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/locale/ko.min.js" integrity="sha512-3kMAxw/DoCOkS6yQGfQsRY1FWknTEzdiz8DOwWoqf+eGRN45AmjS2Lggql50nCe9Q6m5su5dDZylflBY2YjABQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
+
+
     document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
+
       let today = new Date();
-      console.log(today);
       var year = today.getFullYear();
       var month = ('0' + (
       today.getMonth() + 1)).slice(-2);
       var day = ('0' + today.getDate()).slice(-2);
       var dateString = year + '-' + month + '-' + day;
 
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        headerToolbar: {
-          left: 'prevYear,prev,next,nextYear',
-          center: 'title',
-          right: 'dayGridMonth,dayGridWeek,dayGridDay'
-        },
-        initialDate: dateString,
-        navLinks: true, // can click day/week names to navigate views
-        editable: true,
-        dayMaxEvents: true, // allow "more" link when too many events
-        events: [
-          {
-            title: '놀다가 문화의 날',
-            start: '2024-03-30'
-          }, {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2023-01-09T16:00:00'
-          }, {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2023-01-16T16:00:00'
-          }, {
-            title: 'Conference',
-            start: '2023-01-11',
-            end: '2023-01-13'
-          }, {
-            title: 'Meeting',
-            start: '2023-01-12T10:30:00',
-            end: '2023-01-12T12:30:00'
-          }, {
-            title: 'Lunch',
-            start: '2023-01-12T12:00:00'
-          }, {
-            title: 'Meeting',
-            start: '2023-01-12T14:30:00'
-          }, {
-            title: 'Happy Hour',
-            start: '2023-01-12T17:30:00'
-          }, {
-            title: 'Dinner',
-            start: '2023-01-12T20:00:00'
-          }, {
-            title: 'Birthday Party',
-            start: '2023-01-13T07:00:00'
-          }, {
-            title: 'Click for Google',
-            url: 'http://google.com/',
-            start: '2023-01-28'
-          }
-        ]
-      });
+      fetch('/schedule/get')
+        .then(res=>res.json())
+        .then((response)=>
+        {
+          var isAdmin=document.getElementById("token_idx").value;
+          var calendarEl = document.getElementById('calendar');
+          var res=response;
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            locale:'ko',
+            timeZone:'KST',
+            headerToolbar: {
+              left: 'prevYear,prev,next,nextYear',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            initialDate: dateString,
+            navLinks: true,
+            editable: JSON.parse(isAdmin),
+            dayMaxEvents: true,
+            events: res,
+            eventClick: function(info) {
+              if(JSON.parse(isAdmin))
+              {
+                $('#cal-id').val(info.event.id);
+                $('#modal-title-u').html('일정 수정');
+                $('#scheduleModal-u').modal('show');
+                $('#title-u').val(info.event.title);
+                if(info.event.start!=null)
+                {
+                  $('#start-u').val(info.event.start.toISOString().slice(0, 16));
+                }
+                if(info.event.end!=null)
+                {
+                  $('#end-u').val(info.event.end.toISOString().slice(0, 16));
+                }
+              }
+            }
+          });
+          calendar.render();
 
-      calendar.render();
+
+
+          if(JSON.parse(isAdmin))
+          {
+            var add_btn=document.getElementById("add_btn");
+            add_btn.onclick=function(){
+              $('#modal-title-c').html('일정 추가');
+              $('#scheduleModal-c').modal('show');
+              $('#title-c').val('');
+              $('#start-c').val('');
+              $('#end-c').val('');
+            }
+
+            var save_btn=document.getElementById("save_btn");
+            save_btn.onclick=function(){
+
+              setting();
+
+              async function setting(){
+                var data=calendar.getEvents();
+
+                const res = await fetch('/schedule/set', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+                })
+                if (res.ok) {
+                  const data = await res.json() //json도 프로미스 객체 await을 해야 실제값이나옴
+                  console.log(data);
+                  location.reload();
+                }
+              }
+            }
+
+            var create_btn=document.getElementById("create_btn");
+            create_btn.onclick=function(){
+              calendar.addEvent({
+                id:findEmptyId(),
+                title:$('#title-c').val(),
+                start:$('#start-c').val(),
+                end:$('#end-c').val()
+              })
+              $('#scheduleModal-c').modal('hide');
+            }
+
+            var update_btn=document.getElementById("update_btn");
+            update_btn.onclick=function(){
+              var event=calendar.getEventById($('#cal-id').val());
+              event.setProp('title',$('#title-u').val());
+              event.setStart($('#start-u').val());
+              event.setEnd($('#end-u').val());
+              $('#scheduleModal-u').modal('hide');
+            }
+
+            var remove_btn=document.getElementById("remove_btn");
+            remove_btn.onclick=function(){
+              calendar.getEventById($('#cal-id').val()).remove();
+              $('#scheduleModal-u').modal('hide');
+            }
+          }
+
+
+          function findEmptyId()
+          {
+            var usedIds=[];
+            var events=calendar.getEvents();
+            console.log(events);
+
+            events.forEach(function(event){
+              usedIds.push(event.id);
+            })
+            var i=0;
+            while(true)
+            {
+              if (!usedIds.includes(String(i)))
+              {
+                  return i;
+              }
+              i++;
+            }
+          }
+        })
+        .then((data)=>console.log(data));
     });
+
+
   </script>
 {% endblock content %}
