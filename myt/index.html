@@ -65,7 +65,7 @@
         </div>
       </div>
       <div class="container">
-      <div class="owl-carousel owl-theme mb-4" style="height:50%">
+      <div class="owl-carousel owl-theme mb-4" id="menu-carousel" style="height:50%">
         <div class="item">
           <div class="card">
             <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top">
@@ -108,12 +108,12 @@
       </div>
     </div>
   </section>
-  <section class="pt-md-9 py-5 border-bottom" style="height:80vh">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
-          <h1 class="section-title dongle-bold">다가오는 공연</h1>
-        </div>
+  <section class="pt-md-9 py-5 border-bottom">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
+        <h1 class="section-title dongle-bold">다가오는 공연</h1>
       </div>
+    </div>
     <div style="height:60vh; background-image: url('{{ theme_asset(request, 'img/back.jpg') }}'); background-size: cover; background-position: center;">
       <div style="background-color: rgba(0, 0, 0, 0.5); width:100%; height:100%">
         <div class="container d-flex align-items-center" style="height:100%">
@@ -130,6 +130,35 @@
               <!-- Button -->
               <a href="/bbs/content/calendar" class="button btnFade">일정 확인하기</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="owl-carousel owl-theme mb-4" id="youtube-carousel" style="height:50%">
+        <div class="item">
+          <div class="card">
+            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card">
+            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -187,7 +216,7 @@
     </div>
   </section>
   <script>
-    $('.owl-carousel').owlCarousel({
+        $('#menu-carousel').owlCarousel({
       loop: true,
       margin: 20,
       nav: true,
@@ -200,6 +229,23 @@
         },
         1000: {
           items: 4
+        }
+      }
+    });
+
+    $('#youtube-carousel').owlCarousel({
+      loop: true,
+      margin: 40,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        768:{
+          items:2
+        },
+        1000: {
+          items: 3
         }
       }
     })
