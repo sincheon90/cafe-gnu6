@@ -47,6 +47,7 @@
 
 .menu-price{
   font-size:15px;
+  font-weight: bold;
 }
 .menu-title{
   font-family: "Dongle", sans-serif;
@@ -141,12 +142,24 @@ a.button {
 }
 
 .grade-title{
-    color: #fff;
-    padding: 0.7rem 2rem 0.7rem 2rem;
-    background-image: -webkit-linear-gradient(left, #7c4dff 0%, #33FFF5 100%);
-    background-image: linear-gradient(to right, #7c4dff 0%, #33FFF5 100%);
-    -webkit-transform: skew(-15deg);
-    transform: skew(-15deg);
+  font-family: "Dongle", sans-serif;
+  font-style:italic;
+  font-weight: bold;
+  font-size:50px;
+  color: #fff;
+  position: relative;
+  padding: 1rem 0.5rem;
+}
+.grade-title:after{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  content: '';
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background-image: -webkit-linear-gradient(right, #00b0ff 0%, #00e676 100%);
+  background-image: linear-gradient(to left, #00b0ff 0%, #00e676 100%);
 }
 
 .section-title {

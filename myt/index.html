@@ -32,7 +32,7 @@
     </div>
   </header>
 
-  <section class="pt-md-9 py-5 border-bottom d-flex align-items-center my-5">
+  <section class="pt-md-9 py-5 border-bottom d-flex align-items-center">
     <div class="container ">
       <div class="row d-flex align-items-center">
         <div class="col-md-6 mx-auto">
@@ -44,7 +44,7 @@
                 고급 원두를 직접 로스팅하여 저희 카페만의 특색있는 맛을 살렸습니다. 음료를 마시며 공연을 즐겨보세요!
               </div>
               <div class="py-5">
-                <a href="" class="button btnFade">카페 소개</a>
+                <a href="/bbs/content/company" class="button btnFade">카페 소개</a>
               </div>
             </div>
           </div>
@@ -57,13 +57,14 @@
       </div>
     </div>
   </section>
-  <section class="pt-md-9 py-5 my-5 border-bottom d-flex align-items-center">
-    <div class="container">
+  <section class="pt-md-9 py-5 border-bottom">
+
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
           <h1 class="section-title dongle-bold">이달의 추천 메뉴</h1>
         </div>
       </div>
+      <div class="container">
       <div class="owl-carousel owl-theme mb-4" style="height:50%">
         <div class="item">
           <div class="card">
@@ -107,14 +108,12 @@
       </div>
     </div>
   </section>
-  <section class="pt-md-9 border-bottom" style="height:80vh">
-    <div style="height:20vh">
-      <div class="container">
-        <div class="row">
+  <section class="pt-md-9 py-5 border-bottom" style="height:80vh">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
           <h1 class="section-title dongle-bold">다가오는 공연</h1>
         </div>
       </div>
-    </div>
     <div style="height:60vh; background-image: url('{{ theme_asset(request, 'img/back.jpg') }}'); background-size: cover; background-position: center;">
       <div style="background-color: rgba(0, 0, 0, 0.5); width:100%; height:100%">
         <div class="container d-flex align-items-center" style="height:100%">
@@ -123,17 +122,13 @@
               <!-- Date -->
 
               <div class="grade-title mb-2 d-inline-block">
-                <h2>
                   2024월 03월 30일 토요일
-                </h2>
               </div>
               <!-- Heading -->
-              <h2 class="mb-3 text-white">모두가 함께 참여하는 놀다가 문화의 날입니다! 전문적인 밴드부터 취미 밴드까지 다양한 공연을 보실 수 있습니다!</h2>
+              <h3 class="mb-3 text-white">모두가 함께 참여하는 놀다가 문화의 날입니다! 전문적인 밴드부터 취미 밴드까지 다양한 공연을 보실 수 있습니다!</h3>
 
               <!-- Button -->
-              <a class="btn btn-primary text-white " href="/bbs/content/calendar">
-                일정 확인하기
-              </a>
+              <a href="/bbs/content/calendar" class="button btnFade">일정 확인하기</a>
             </div>
           </div>
         </div>
