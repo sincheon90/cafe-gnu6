@@ -6,20 +6,10 @@
 {% block content %}
   {% include "/bbs/newwin.inc.html" %}
   <header style="z-index: 0; height: 100%">
-    <div class="d-flex flex-column min-vh-100 bg-black-50 pt-10 pt-md-8 pb-7 pb-md-0 ">
-      <div class="container my-auto">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-8 col-lg-6 text-center">
-            <h4 class="text-xs text-white" style="margin: -10px">
-              Cafe / LiveHouse
-            </h4>
-            <h1 class="display-1 title text-emp">NOLDAGA</h1>
-
-            <p class="text-center text-white" style="word-break: keep-all">
-              카페『놀다가』는 카페와 라이브하우스를 접목시켜 독특한 분위기를 지닌 공간으로, 음료와 음악이 여러분에게 특별한 경험을 선사합니다. 다양한 공연과 이벤트를 즐겨보세요.
-            </p>
-
-            <a href="" class="button btnFade">대관 예약</a>
+    <div class="d-flex flex-column min-vh-100 bg-black-50 pt-10 pt-md-8 pb-7 pb-md-0 h-100">
+      <div class="container m-auto h-100">
+        <div class="row justify-content-center h-100" >
+          <div class="col-12 col-md-10 col-lg-10 text-center p-4 h-100" style="margin-bottom: 20%;">
           </div>
         </div>
       </div>
@@ -31,28 +21,26 @@
           width: 100%;
           height: 100%;
           z-index: -100;
-        " class="dark-image">
-      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="5000">
-            <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="d-block w-100 full-img"/>
-          </div>
-          <div class="carousel-item" data-bs-interval="5000">
+        " class="">
+      <div id="" class="">
+        <div class="">
+          <div class="" >
             <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="d-block w-100 full-img"/>
           </div>
         </div>
       </div>
     </div>
   </header>
+
   <section class="pt-md-9 py-5 border-bottom d-flex align-items-center my-5">
-    <div class="container">
+    <div class="container ">
       <div class="row d-flex align-items-center">
         <div class="col-md-6 mx-auto">
           <div class="row justify-content-center">
             <div class="col-md-9 ">
               <div class="my-4" style="word-break: keep-all">
-                <h4>WELCOME TO NOLDAGA</h4>
-                <h2>놀다가 카페에 오신걸 환영합니다.</h2>
+                <h4 class="">WELCOME TO NOLDAGA</h4>
+                <h2 class="">놀다가 카페에 오신걸 환영합니다.</h2>
                 고급 원두를 직접 로스팅하여 저희 카페만의 특색있는 맛을 살렸습니다. 음료를 마시며 공연을 즐겨보세요!
               </div>
               <div class="py-5">
@@ -73,36 +61,45 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
-          <h2 class="section-title">이달의 추천 메뉴</h2>
+          <h1 class="section-title dongle-bold">이달의 추천 메뉴</h1>
         </div>
       </div>
       <div class="owl-carousel owl-theme mb-4" style="height:50%">
         <div class="item">
-          <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
+          <div class="card">
+            <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top">
+            <div class="card-body">
+              <div class="text-center menu-price">딸기요거트스무디</div>
+              <div class="text-center menu-title">6500원</div>
+            </div>
+          </div>
         </div>
         <div class="item">
-          <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
+          <div class="card" >
+            <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top">
+            <div class="card-body">
+              <div class="text-center menu-price">으라차차</div>
+              <div class="text-center menu-title">5000원</div>
+            </div>
+          </div>
         </div>
         <div class="item">
-          <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
+          <div class="card" >
+            <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top">
+            <div class="card-body">
+              <div class="text-center menu-price">자몽차</div>
+              <div class="text-center menu-title">5000원</div>
+            </div>
+          </div>
         </div>
         <div class="item">
-          <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
-        </div>
-        <div class="item">
-          <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
-        </div>
-        <div class="item">
-          <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
-        </div>
-        <div class="item">
-          <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
-        </div>
-        <div class="item">
-          <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
-        </div>
-        <div class="item">
-          <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="img-fluid"/>
+          <div class="card" >
+            <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top">
+            <div class="card-body">
+              <div class="text-center menu-price">놀다가크림커피</div>
+              <div class="text-center menu-title">6000원</div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -114,7 +111,7 @@
     <div style="height:20vh">
       <div class="container">
         <div class="row">
-          <div class="col h2 mt-5 text-center section-title">다가오는 공연</div>
+          <h1 class="section-title dongle-bold">다가오는 공연</h1>
         </div>
       </div>
     </div>
@@ -146,8 +143,8 @@
   <section class="pt-md-9 py-5 border-bottom d-flex align-items-center">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 text-center mb-5 section-title">
-          <h2>원데이 클래스</h2>
+        <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
+          <h1 class="section-title dongle-bold">원데이 클래스</h1>
         </div>
       </div>
       <div class="row text-center">

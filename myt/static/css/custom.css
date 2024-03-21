@@ -1,4 +1,19 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;700&display=swap');
+
+.dongle-light {
+  font-family: "Dongle", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.dongle-bold {
+  font-family: "Dongle", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 .underline {
   text-decoration: underline;
 }
@@ -17,7 +32,9 @@
 .pagination .page:focus { background-color:#24B1AA; border:1px solid var(--pgBg) }
 .pagination .current,
 .pagination .current:hover,
-.pagination .current:focus { background-color:#24B1AA; border:1px solid #24B1AA; color:#fff; font-weight:bold; }
+.pagination .current:focus { background-color:rgb(36, 178, 171); border:1px solid #24B1AA; color:#fff; font-weight:bold; }
+
+
 
 @font-face {
   font-family: 'Hakgrounded-startyoansimWoojuR';
@@ -27,12 +44,26 @@
   font-style: normal;
 }
 
+
+.menu-price{
+  font-size:15px;
+}
+.menu-title{
+  font-family: "Dongle", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size:30px;
+  color:orange;
+}
 body {
   font-family: 'HakgyoansimWoojuR', sans-serif;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 .title {
-  font-family: 'Luckiest Guy', cursive;
+    font-family: "Dongle", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size:50px;
 }
 .navsquare {
   height: 50px;
@@ -73,7 +104,7 @@ a.button {
   color: #fff;
   border-radius: 5px;
   transition: all 0.2s;
-  background: #00b992;
+  background: #24B1AA;
   text-decoration-line: none;
 }
 .text-emp {
@@ -82,7 +113,7 @@ a.button {
   text-decoration-line: none;
 }
 .btnFade:hover {
-  background: #008e70;
+  background: rgb(0, 90, 71);
   color: #fff;
 }
 .media-decoration-img {
@@ -123,17 +154,6 @@ a.button {
   text-transform: uppercase;
   padding-bottom: 5px;
 }
-.section-title:before {
-  width: 28px;
-  height: 5px;
-  display: block;
-  content: "";
-  position: absolute;
-  bottom: 3px;
-  left: 50%;
-  margin-left: -14px;
-  background-color: #b80000;
-}
 .section-title:after {
   width: 100px;
   height: 1px;
@@ -143,12 +163,24 @@ a.button {
   margin-top: 25px;
   left: 50%;
   margin-left: -50px;
-  background-color: #b80000;
+  background-color: #24B1AA;
 }
 
 .oneday_btn{
   text-decoration-line: none;
 }
+
+.dongle-light {
+  font-family: "Dongle", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  }
+
+  .dongle-bold {
+    font-family: "Dongle", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
 
 .oneday_btn:hover{
   text-decoration-line:underline;
