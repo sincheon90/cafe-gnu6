@@ -134,10 +134,18 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <style>
+      /* 커스텀 CSS */
+      .custom-card {
+        border:1px solid gray;
+        border-radius: 20px; /* 테두리를 더 둥글게 만들기 위한 값 조정 */
+      }
+    </style>
+    <div class="container mt-4 custom-card p-4">
       <div class="owl-carousel owl-theme mb-4" id="youtube-carousel" style="height:50%">
         <div class="item">
-          <div class="card">
+          <div class="card ">
+
             <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
