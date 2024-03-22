@@ -204,6 +204,5 @@ a.button {
   color: #fff;
   padding: 0.7rem 0.7rem 0.7rem 2rem;
   border-radius: 100vh;
-  background-image: -webkit-linear-gradient(right, #7c4dff 0%, #33FFF5 100%);
-  background-image: linear-gradient(to left, #7c4dff 0%, #33FFF5 100%);
+  background-color: #24B1AA;
 }
