@@ -64,9 +64,10 @@
   .owl-carousel .owl-nav button.owl-prev,
   .owl-carousel .owl-nav button.owl-next,
   .owl-carousel button.owl-dot {
-    background: none;
+    background-color: transparent;
     color: inherit;
     padding: 0 !important;
+    border:none;
     font: inherit; }
     .owl-carousel button.owl-dot {
       border:none;
@@ -186,15 +187,3 @@
   z-index: 1;
   height: 100%;
   width: 100%; }
-
-.owl-prev,
-.owl-next {
-      background-color: #333; /* 배경색 변경 */
-      width: 50px; /* 너비 변경 */
-      height: 50px; /* 높이 변경 */
-      border:1px solid gray;
-  }
-  .owl-next>span,
-  .owl-prev>span {
-    font-size:20px;
-  }

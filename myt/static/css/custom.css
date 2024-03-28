@@ -13,7 +13,6 @@
   font-style: normal;
 }
 
-
 .underline {
   text-decoration: underline;
 }
@@ -44,6 +43,41 @@
   font-style: normal;
 }
 
+.menu-item:not(:last-child) {
+  position: relative; /* 부모 요소로부터 상대적으로 위치를 지정합니다. */
+}
+.menu-item:not(:last-child)::after {
+  content: ""; /* 가상 요소에 내용을 추가합니다. */
+  position: absolute; /* 절대 위치로 지정합니다. */
+  top: 50%; /* 부모 요소의 중앙에 배치합니다. */
+  right: 0; /* 오른쪽에 배치합니다. */
+  transform: translateY(-50%); /* 수직으로 중앙에 배치합니다. */
+  width: 1px; /* 구분선의 너비를 지정합니다. */
+  height: 60%; /* 구분선의 높이를 지정합니다. */
+  background-color: #ced4da; /* 구분선의 색상을 지정합니다. */
+}
+
+.video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video>div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 .menu-price{
   font-size:15px;
@@ -55,6 +89,7 @@
   font-style: normal;
   font-size:30px;
   color:orange;
+  line-height:20px;
 }
 body {
   font-family: 'HakgyoansimWoojuR', sans-serif;
@@ -64,7 +99,21 @@ body {
     font-family: "Dongle", sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size:50px;
+    font-size:100px;
+}
+.title-sub{
+  font-family: "Dongle", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size:50px;
+}
+.sub-title{
+  font-family: 'HakgyoansimWoojuR', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size:20px;
+    letter-spacing:10px;
+    color: gray;
 }
 .navsquare {
   height: 50px;
@@ -93,7 +142,7 @@ body {
   transform: scaleY(0);
 }
 
-a.button {
+a.button-white {
   display: inline-block;
   position: relative;
   width: 150px;
@@ -102,20 +151,31 @@ a.button {
   font-weight: 600;
   text-align: center;
   line-height: 50px;
-  color: #fff;
-  border-radius: 5px;
+  color: #000000;
   transition: all 0.2s;
-  background: #24B1AA;
   text-decoration-line: none;
+  border:1px solid black
 }
+
+a.button-black{
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  padding: 0;
+  margin: auto;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  transition: all 0.2s;
+  text-decoration-line: none;
+  border:1px solid white
+}
+
 .text-emp {
   color: rgba(255, 255, 255, 1);
   color: #24B1AA;
   text-decoration-line: none;
-}
-.btnFade:hover {
-  background: rgb(0, 90, 71);
-  color: #fff;
 }
 .media-decoration-img {
   border: 2px solid #000; /* 테두리 스타일 */
@@ -141,25 +201,21 @@ a.button {
   color:#273332;
 }
 
-.grade-title{
-  font-family: "Dongle", sans-serif;
-  font-style:italic;
-  font-weight: bold;
-  font-size:50px;
-  color: #fff;
-  position: relative;
-  padding: 1rem 0.5rem;
+.owl-carousel > .owl-nav > .owl-prev{
+  position:absolute;
+  top:50%;
+  right:100%;
+  background:transparent;
 }
-.grade-title:after{
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  content: '';
-  width: 100%;
-  height: 6px;
-  border-radius: 3px;
-  background-image: -webkit-linear-gradient(right, #00b0ff 0%, #00e676 100%);
-  background-image: linear-gradient(to left, #00b0ff 0%, #00e676 100%);
+.owl-carousel > .owl-nav > .owl-next{
+  position:absolute;
+  top:50%;
+  left:100%;
+  background:transparent;
+}
+
+.owl-carousel > .owl-nav > .owl-prev:hover, .owl-carousel > .owl-nav > .owl-next:hover {
+  background:transparent;
 }
 
 .section-title {

@@ -5,33 +5,32 @@
 
 {% block content %}
   {% include "/bbs/newwin.inc.html" %}
-  <header style="z-index: 0; height: 100%">
-    <div class="d-flex flex-column min-vh-100 bg-black-50 pt-10 pt-md-8 pb-7 pb-md-0 h-100">
-      <div class="container m-auto h-100">
-        <div class="row justify-content-center h-100" >
-          <div class="col-12 col-md-10 col-lg-10 text-center p-4 h-100" style="margin-bottom: 20%;">
+  <section class="pt-md-9 py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 text-center" style="margin-top:200px">
+      </div>
+    </div>
+    <div class="row">
+      <div style="width:100%;">
+        <div class="container">
+          <div class="row py-5 g-4" >
+            <div class="col-12 col-lg-6 card overflow-hidden p-0" style="height:70vh">
+              <img src="{{ theme_asset(request, 'img/bakery2.jpg') }}" style=" width: auto; object-fit: cover;" class="card-img-top h-100">
+            </div>
+            <div class="col-12 col-lg-6" style="height:70vh">
+              <div class="row h-100">
+                <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/coffee1.jpg') }}" class="h-100"  style=" width: auto; object-fit: cover;" class="card-img-top"></div>
+                <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/test.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"></div>
+                <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/rental3.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"></div>
+                <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/concert6.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div style="
-          position: absolute;
-          top: 0px;
-          left: 0px;
-          width: 100%;
-          height: 100%;
-          z-index: -100;
-        " class="">
-      <div id="" class="">
-        <div class="">
-          <div class="" >
-            <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="d-block w-100 full-img"/>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
+  </section>
+<!--
   <section class="pt-md-9 py-5 border-bottom d-flex align-items-center">
     <div class="container ">
       <div class="row d-flex align-items-center">
@@ -56,171 +55,343 @@
         </div>
       </div>
     </div>
-  </section>
-  <section class="pt-md-9 py-5 border-bottom">
-
+  </section>-->
+  <section class="pt-md-9 py-5">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
-          <h1 class="section-title dongle-bold">이달의 추천 메뉴</h1>
+          <h1 class="section-title dongle-bold">메뉴</h1>
         </div>
       </div>
       <div class="container">
-      <div class="owl-carousel owl-theme mb-4" id="menu-carousel" style="height:50%">
-        <div class="item">
-          <div class="card">
-            <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top">
-            <div class="card-body">
-              <div class="text-center menu-price">딸기요거트스무디</div>
-              <div class="text-center menu-title">6500원</div>
+        <div class="owl-carousel owl-theme mb-4" id="drink-carousel" style="height:50%">
+          <div class="item">
+            <div class="card overflow-hidden" style="height: 300px;">
+              <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top img-fluid" style="max-height: 300px; width:auto; ">
+              <div class="card-body w-100" style="position: absolute; bottom:0px; background-color: rgb(255, 255, 255);">
+                <div class="text-center menu-price">딸기요거트스무디</div>
+                <div class="text-center menu-title">6500원</div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card overflow-hidden" style="height: 300px;">
+              <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top img-fluid" style="max-height: 300px; width:auto;">
+              <div class="card-body w-100" style="position: absolute; bottom:0px; background-color: rgb(255, 255, 255);">
+                <div class="text-center menu-price">딸기요거트스무디</div>
+                <div class="text-center menu-title">6500원</div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card overflow-hidden" style="height: 300px;">
+              <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top img-fluid" style="max-height: 300px; width:auto;">
+              <div class="card-body w-100" style="position: absolute; bottom:0px; background-color: rgb(255, 255, 255);">
+                <div class="text-center menu-price">딸기요거트스무디</div>
+                <div class="text-center menu-title">6500원</div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card overflow-hidden" style="height: 300px;">
+              <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top img-fluid" style="max-height: 300px; width:auto;">
+              <div class="card-body w-100" style="position: absolute; bottom:0px; background-color: rgb(255, 255, 255);">
+                <div class="text-center menu-price">딸기요거트스무디</div>
+                <div class="text-center menu-title">6500원</div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card overflow-hidden" style="height: 300px;">
+              <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top img-fluid" style="max-height: 300px; width:auto;">
+              <div class="card-body w-100" style="position: absolute; bottom:0px; background-color: rgb(255, 255, 255);">
+                <div class="text-center menu-price">딸기요거트스무디</div>
+                <div class="text-center menu-title">6500원</div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card overflow-hidden" style="height: 300px;">
+              <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top img-fluid" style="max-height: 300px; width:auto;">
+              <div class="card-body w-100" style="position: absolute; bottom:0px; background-color: rgb(255, 255, 255);">
+                <div class="text-center menu-price">딸기요거트스무디</div>
+                <div class="text-center menu-title">6500원</div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="item">
-          <div class="card" >
-            <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top">
-            <div class="card-body">
-              <div class="text-center menu-price">으라차차</div>
-              <div class="text-center menu-title">5000원</div>
+        <div class="owl-carousel owl-theme mb-4" id="dessert-carousel" style="height:50%">
+          <div class="item">
+            <div class="card overflow-hidden" style="height: 300px;">
+              <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top img-fluid" style="max-height: 300px; width:auto;">
+              <div class="card-body w-100" style="position: absolute; bottom:0px; background-color: rgb(255, 255, 255);">
+                <div class="text-center menu-price">빵</div>
+                <div class="text-center menu-title">2500원</div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="item">
-          <div class="card" >
-            <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top">
-            <div class="card-body">
-              <div class="text-center menu-price">자몽차</div>
-              <div class="text-center menu-title">5000원</div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="card" >
-            <img src="{{ theme_asset(request, 'img/test.jpg') }}" class="card-img-top">
-            <div class="card-body">
-              <div class="text-center menu-price">놀다가크림커피</div>
-              <div class="text-center menu-title">6000원</div>
-            </div>
-          </div>
+        <div class="row">
+        <a href="/board/drink" class="button-white">더 많은 메뉴</a>
         </div>
       </div>
-      <div class="row">
-        <a href="/board/drink" class="button btnFade">더 많은 메뉴</a>
-      </div>
-    </div>
   </section>
-  <section class="pt-md-9 py-5 border-bottom">
+  <section class="pt-md-9 py-5 ">
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
-        <h1 class="section-title dongle-bold">다가오는 공연</h1>
+        <h1 class="section-title dongle-bold">클래스</h1>
       </div>
     </div>
-    <div style="height:60vh; background-image: url('{{ theme_asset(request, 'img/back.jpg') }}'); background-size: cover; background-position: center;">
-      <div style="background-color: rgba(0, 0, 0, 0.5); width:100%; height:100%">
-        <div class="container d-flex align-items-center" style="height:100%">
-          <div class="row py-5">
-            <div class="col-md-8 col-lg-5">
-              <!-- Date -->
-
-              <div class="grade-title mb-2 d-inline-block">
-                  2024월 03월 30일 토요일
-              </div>
-              <!-- Heading -->
-              <h3 class="mb-3 text-white">모두가 함께 참여하는 놀다가 문화의 날입니다! 전문적인 밴드부터 취미 밴드까지 다양한 공연을 보실 수 있습니다!</h3>
-
-              <!-- Button -->
-              <a href="/bbs/content/calendar" class="button btnFade">일정 확인하기</a>
+    <div style="height: 40vh; background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 40%, rgba(255, 255, 255, 0.935) 70%), url('{{ theme_asset(request, 'img/cooking1.jpg') }}'); background-size: cover; background-position: center;">
+      <div class="container d-flex justify-content-end align-items-center h-100">
+        <div class="row w-100 py-5 h-75">
+            <div class="col-12 h-100">
+                <div class="h-75">
+                  <div class="mb-2 text-start text-black h5">
+                    푸드메이킹 원데이클래스
+                  </div>
+                  <div class="h3 mb-3 text-black text-start fw-bold">자신이 원하는 음식을 만들어보자!</div>
+                </div>
+                <div class="text-start h-25"><a href="/bbs/content/calendar" class="button-white">클래스 확인하기</a></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4 p-4" >
+      <div class="text-start pb-4">
+        <h2 class="fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cookie" viewBox="0 0 16 16">
+          <path d="M6 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m4.5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m-.5 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+          <path d="M8 0a7.96 7.96 0 0 0-4.075 1.114q-.245.102-.437.28A8 8 0 1 0 8 0m3.25 14.201a1.5 1.5 0 0 0-2.13.71A7 7 0 0 1 8 15a6.97 6.97 0 0 1-3.845-1.15 1.5 1.5 0 1 0-2.005-2.005A6.97 6.97 0 0 1 1 8c0-1.953.8-3.719 2.09-4.989a1.5 1.5 0 1 0 2.469-1.574A7 7 0 0 1 8 1c1.42 0 2.742.423 3.845 1.15a1.5 1.5 0 1 0 2.005 2.005A6.97 6.97 0 0 1 15 8c0 .596-.074 1.174-.214 1.727a1.5 1.5 0 1 0-1.025 2.25 7 7 0 0 1-2.51 2.224Z"/>
+        </svg>
+        클래스 리스트
+        </h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <div class="video mb-2" style="background-image: url('{{ theme_asset(request, 'img/cooking1.jpg') }}'); background-size: cover;">
+            <div class="d-flex flex-column align-items-center justify-content-center">
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="container mt-4 p-4" style="border:1px solid gray; border-radius: 20px;">
-      <div class="text-center pb-4">
-        <h2 >연습 영상</h2>
-      </div>
-      <div class="owl-carousel owl-theme mb-4" id="youtube-carousel" style="height:50%">
-        <div class="item">
-          <div class="card ">
-
-            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="h5">
+            재료개량부터 굽기까지
           </div>
-        </div>
-        <div class="item">
-          <div class="card">
-            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="item">
-          <div class="card">
-            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="item">
-          <div class="card">
-            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="item">
-          <div class="card">
-            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="h4 fw-bold" style="color:gray">
+            피자만들기 클래스
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="pt-md-9 py-5 border-bottom d-flex align-items-center">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
-          <h1 class="section-title dongle-bold">원데이 클래스</h1>
+  <section class="pt-md-9 py-5 ">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
+        <h1 class="section-title dongle-bold">공연</h1>
+      </div>
+    </div>
+    <div style="height: 40vh; background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40%, rgb(169, 87, 0) 70%), url('{{ theme_asset(request, 'img/back.jpg') }}'); background-size: cover; background-position: center;">
+      <div style="background-color: rgba(0, 0, 0, 0.5); width:100%; height:100%">
+        <div class="container d-flex justify-content-end align-items-center h-100">
+          <div class="row w-100 py-5 h-75">
+            <div class="col-12 h-100">
+              <div class="h-75">
+                <!-- <div class="mb-2 text-start text-white h2 fw-bold">
+                  2024년 03월 30일 (토요일)
+                </div> -->
+                <div class="mb-2 text-end text-white h5">
+                  놀다가 문화의 날
+                </div>
+                <div class="h3 mb-3 text-white text-end fw-bold">다양한 문화를 경험할 수 있습니다!</div>
+              </div>
+              <div class="text-end h-25"><a href="/bbs/content/calendar" class="button-black">일정 확인하기</a></div>
+          </div>
+          </div>
         </div>
       </div>
-      <div class="row text-center">
-        <div class="text-center">
-          <p class="d-inline-flex gap-1">
-            <a class=" btn oneday_btn oneday_btn_clicked" onclick="toggleCollapse('collapseAppetizers')">요리</a>
-            <a class=" btn oneday_btn" onclick="toggleCollapse('collapseMainCourse')">음악</a>
-            <a class=" btn oneday_btn" onclick="toggleCollapse('collapseDesserts')">기타</a>
-          </p>
+    </div>
+    <div class="container mt-4 p-4" >
+      <div class="text-start pb-4">
+        <h2 class="fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+          <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+        </svg>
+        연습영상
+        </h2>
+      </div>
+      <div class="row g-2">
+        <div class="col-12 col-lg-3">
+          <div class="video mb-2">
+            <iframe width="100%"  src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="h5">
+            다시사랑한다면 연습영상
+          </div>
+          <div class="h6" style="color:gray">
+            놀다가yung
+          </div>
         </div>
-        <div class="collapse" id="collapseAppetizers">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="py-3 border-bottom">
-                <div class="row">
-                  <div class="col-3 align-self-center">
-                    <!-- Image -->
-                    <div class="ratio ratio-1x1">
-                      <img class="object-fit-cover" src="/data/editor/20240312/thumbnail_200x150_84f3d8dd-9198-42ea-9680-49ccd495e176.jpg" alt="...">
-                    </div>
-                  </div>
-                  <div class="col-7">
-                    <!-- Heading -->
-                    <h5 class="mb-2">피자만들기</h5>
-
-                    <!-- Text -->
-                    <p class="mb-0">재료개량부터 굽기까지 가능한 베이킹 체험 프로그램입니다.</p>
-                  </div>
-                  <div class="col-2">
-                    <!-- Price -->
-                    <div class="fs-4 font-serif text-center text-body-emphasis"></div>
-                  </div>
-                </div>
-              </div>
+        <div class="col-12 col-lg-3">
+          <div class="video mb-2">
+            <iframe width="100%"  src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="h5">
+            다시사랑한다면 연습영상
+          </div>
+          <div class="h6" style="color:gray">
+            놀다가yung
+          </div>
+        </div>
+        <div class="col-12 col-lg-3">
+          <div class="video mb-2">
+            <iframe width="100%"  src="https://www.youtube.com/embed/2AaPMVp50dA?si=00KhGid9X9-ufgZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="h5">
+            다시사랑한다면 연습영상
+          </div>
+          <div class="h6" style="color:gray">
+            놀다가yung
+          </div>
+        </div>
+        <div class="col-12 col-lg-3">
+          <div class="video mb-2" style="background-color: #24B1AA;">
+            <div class="d-flex flex-column align-items-center justify-content-center">
+              <div class=""><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+              </svg>
+            </div>
+            <div class="h5">
+              다른영상 보러가기
+            </div>
             </div>
           </div>
         </div>
-        <div class="collapse" id="collapseMainCourse">
-          <div class="row"></div>
+      </div>
+    </div>
+  </section>
+  <section class="pt-md-9 py-5 ">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
+        <h1 class="section-title dongle-bold">대관</h1>
+      </div>
+    </div>
+    <div style="height: 40vh; background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 40%, rgb(13, 92, 147) 70%), url('{{ theme_asset(request, 'img/rental3.jpg') }}'); background-size: cover; background-position: center;">
+      <div class="container d-flex justify-content-end align-items-center h-100">
+        <div class="row w-100 py-5 h-75">
+            <div class="col-12 h-100">
+                <div class="h-75">
+                  <div class="mb-2 text-start text-white h5">
+                    다목적 대관 공간 제공
+                  </div>
+                  <div class="h3 mb-3 text-white text-start fw-bold">각종 대관을 한곳에서!</div>
+                </div>
+                <div class="text-start h-25"><a href="/bbs/content/calendar" class="button-black">대관 신청하기</a></div>
+            </div>
         </div>
-        <div class="collapse" id="collapseDesserts">
-          <div class="row"></div>
+      </div>
+    </div>
+    <div class="container mt-4 p-4" >
+      <div class="row pb-4 g-2">
+        <div class="col-12 col-lg-3">
+          <div class="card overflow-hidden" style="border:none; height: 300px; background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.538) 70%), url('{{ theme_asset(request, 'img/concert4.jpg') }}'); background-size: cover; background-position: center;">
+            <div class="h2 text-white fw-bold" style="position: absolute; left:20px; top:20px;">워크샵</div>
+            <div style="position: absolute; left:20px; bottom:20px;"><button type="button" class="btn btn-light">신청하기</button></div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3">
+          <div class="card overflow-hidden" style="border:none; height: 300px; background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.538) 70%), url('{{ theme_asset(request, 'img/party2.jpg') }}'); background-size: cover; background-position: center;">
+            <div class="h2 text-white fw-bold" style="position: absolute; left:20px; top:20px;">파티</div>
+            <div style="position: absolute; left:20px; bottom:20px;"><button type="button" class="btn btn-light">신청하기</button></div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3">
+          <div class="card overflow-hidden" style="border:none; height: 300px; background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.538) 70%), url('{{ theme_asset(request, 'img/test.jpg') }}'); background-size: cover; background-position: center;">
+            <div class="h2 text-white fw-bold" style="position: absolute; left:20px; top:20px;">발표</div>
+            <div style="position: absolute; left:20px; bottom:20px;"><button type="button" class="btn btn-light">신청하기</button></div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3">
+          <div class="card overflow-hidden" style="border:none; height: 300px; background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.538) 70%), url('{{ theme_asset(request, 'img/concert1.jpg') }}'); background-size: cover; background-position: center;">
+            <div class="h2 text-white fw-bold" style="position: absolute; left:20px; top:20px;">합주</div>
+            <div style="position: absolute; left:20px; bottom:20px;"><button type="button" class="btn btn-light">신청하기</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pt-md-9 py-5 ">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
+        <h1 class="section-title dongle-bold">보드게임</h1>
+      </div>
+    </div>
+    <div style="height: 40vh; background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40%, rgb(255, 197, 109) 70%), url('{{ theme_asset(request, 'img/boardgame1.jpg') }}'); background-size: cover; background-position: center;">
+      <div class="container d-flex justify-content-end align-items-center h-100">
+        <div class="row w-100 py-5 h-75">
+            <div class="col-12 h-100">
+                <div class="h-100">
+                  <div class="mb-2 text-end text-white h5" >
+                    각종 보드게임 보유중
+                  </div>
+                  <div class="h3 mb-3 text-white text-end fw-bold">카페에서 즐기는 보드게임!</div>
+                </div>
+
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-4 p-4" >
+      <div class="text-start pb-4">
+        <h2 class="fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-dice-6" viewBox="0 0 16 16">
+          <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3z"/>
+          <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-8 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+        </svg>
+        보유중인 보드게임
+        </h2>
+      </div>
+      <div class="owl-carousel owl-theme mb-4" id="boardgame-carousel" style="height:50%">
+        <div class="item">
+          <div class="card overflow-hidden">
+            <img src="{{ theme_asset(request, 'img/board1.png') }}" class="card-img-top">
+          </div>
+          <div class="text-center h5 pt-4">
+            렉시오
+          </div>
+        </div>
+        <div class="item">
+          <div class="card overflow-hidden">
+            <img src="{{ theme_asset(request, 'img/board2.png') }}" class="card-img-top">
+          </div>
+          <div class="text-center h5 pt-4">
+            루미큐브
+          </div>
+        </div>
+        <div class="item">
+          <div class="card overflow-hidden">
+            <img src="{{ theme_asset(request, 'img/board4.png') }}" class="card-img-top">
+          </div>
+          <div class="text-center h5 pt-4">
+            스플렌더
+          </div>
+        </div>
+        <div class="item">
+          <div class="card overflow-hidden">
+            <img src="{{ theme_asset(request, 'img/board3.png') }}" class="card-img-top">
+          </div>
+          <div class="text-center h5 pt-4">
+            쇼텐토텐
+          </div>
+        </div>
+        <div class="item">
+          <div class="card overflow-hidden">
+            <img src="{{ theme_asset(request, 'img/board5.png') }}" class="card-img-top">
+          </div>
+          <div class="text-center h5 pt-4">
+            할리갈리
+          </div>
         </div>
       </div>
     </div>
   </section>
   <script>
-        $('#menu-carousel').owlCarousel({
+        $('#dessert-carousel').owlCarousel({
       loop: true,
       margin: 20,
       nav: true,
@@ -236,51 +407,39 @@
         }
       }
     });
-
-    $('#youtube-carousel').owlCarousel({
+    $('#drink-carousel').owlCarousel({
       loop: true,
-      margin: 40,
+      margin: 20,
       nav: true,
+      navText:['<img src="http://www.inavi.com/Content2/Images/main/icon-prev.png">', '<img src="http://www.inavi.com/Content2/Images/main/icon-next.png">'],
       responsive: {
         0: {
           items: 1
         },
         768:{
-          items:2
+          items:3
         },
         1000: {
-          items: 3
+          items: 4
         }
       }
     })
-  </script>
-  <script>
-    const toggleCollapse = (id) => {
-      const collapse = document.getElementById(id);
-      const isCollapsed = collapse.style.display === 'block';
-      const allCollapses = document.querySelectorAll('.collapse');
-      const allOndayBtn = document.querySelectorAll('.oneday_btn');
-      allCollapses.forEach(c => {
-        if (c.id !== id || !isCollapsed) {
-          c.style.display = 'none';
+    $('#boardgame-carousel').owlCarousel({
+      loop: true,
+      margin: 20,
+      nav: true,
+      navText:['<img src="http://www.inavi.com/Content2/Images/main/icon-prev.png">', '<img src="http://www.inavi.com/Content2/Images/main/icon-next.png">'],
+      responsive: {
+        0: {
+          items: 2
+        },
+        768:{
+          items: 4
+        },
+        1000: {
+          items: 5
         }
-      });
-      allOndayBtn.forEach(c => {
-        c
-          .classList
-          .remove("oneday_btn_clicked")
-      })
-      if (!isCollapsed) {
-        collapse.style.display = 'block';
       }
-      event
-        .currentTarget
-        .classList
-        .add("oneday_btn_clicked");
-    }
-    document
-      .getElementById('collapseAppetizers')
-      .style
-      .display = 'block';
+    })
   </script>
 {% endblock content %}
