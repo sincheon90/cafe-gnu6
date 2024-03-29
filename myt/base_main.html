@@ -6,8 +6,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"/>
   {% set member = request.state.login_member %}
   <!-- 상단 시작 { -->
-    <nav class="navbar-expand-lg navbar-togglable fixed-top text-white">
-      <div class="navsquare shadow-sm expanded" style="
+    <nav class="navbar-expand-lg navbar-togglable fixed-top text-white d-flex justify-content-center">
+      <div class="navsquare shadow-sm expanded d-none d-lg-flex" style="
             position: fixed;
             top: 0px;
             left: 0px;
@@ -15,6 +15,14 @@
             height: 240px;
             z-index: -100;
           "></div>
+          <div class="navsquare shadow-sm expanded d-flex d-lg-none" style="
+          position: fixed;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 86px;
+          z-index: -100;
+        "></div>
       <div class="navsquare-sub shadow-sm " style="
             position: fixed;
             top: 240px;
@@ -23,71 +31,106 @@
             height: 160px;
             z-index: -100;
           ">
-        <div style="height:0px"></div>
-        <div class="container px-0">
-            <div class="text-center col-12 h-100"  style="padding-left:150px;padding-right:150px">
-              <div class="navbar-nav nav-underline row d-flex justify-content-between">
-                <div class="nav-item col">
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="{{ url_for('content_view', co_id='company') }}">회사소개</a>
-                  </div>
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="/bbs/content/esg">ESG</a>
-                  </div>
+        <div class="container">
+        <div class="row">
+          <div class="text-center w-100 h-100">
+            <div class="row d-flex justify-content-center w-100">
+              <div class="nav-item col-1">
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="{{ url_for('content_view', co_id='company') }}">회사소개</a>
                 </div>
-                <div class="nav-item col">
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="/board/drink">음료</a>
-                  </div>
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="/board/bakery">빵</a>
-                  </div>
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/bbs/content/esg">ESG</a>
                 </div>
-                <div class="nav-item col">
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="/board/class">교육신청</a>
-                  </div>
+              </div>
+              <div class="nav-item col-1">
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/board/drink">음료</a>
                 </div>
-                <div class="nav-item col">
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="/board/rentalroom">대관신청</a>
-                  </div>
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/board/bakery">빵</a>
                 </div>
-                <div class="nav-item col">
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="/bbs/content/calendar">일정</a>
-                  </div>
+              </div>
+              <div class="nav-item col-1">
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/board/class">교육신청</a>
                 </div>
-                <div class="nav-item col">
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="/board/notice">공지사항</a>
-                  </div>
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="/board/event">이벤트</a>
-                  </div>
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="/board/donerwrite">후원</a>
-                  </div>
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="/board/livevideo">활동영상</a>
-                  </div>
+              </div>
+              <div class="nav-item col-1">
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/board/rentalroom">대관신청</a>
                 </div>
-                <div class="nav-item col">
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="/bbs/faq">자주하는 질문</a>
-                  </div>
-                  <div class="row">
-                    <a class="navsubbutton nav-link text-menu-sub" href="/board/voc">고객의 소리</a>
-                  </div>
+              </div>
+              <div class="nav-item col-1">
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/bbs/content/calendar">일정</a>
+                </div>
+              </div>
+              <div class="nav-item col-1">
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/board/notice">공지사항</a>
+                </div>
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/board/event">이벤트</a>
+                </div>
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/board/donerwrite">후원</a>
+                </div>
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/board/livevideo">활동영상</a>
+                </div>
+              </div>
+              <div class="nav-item col-1">
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/bbs/faq">자주하는 질문</a>
+                </div>
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/board/voc">고객의 소리</a>
                 </div>
               </div>
             </div>
           </div>
+        </div>
       </div>
-      <div class="container h-100 ">
-        <div class="row">
+    </div>
+      <div class="container m-0 px-0" style=" height: 86px;">
+        <div class="row d-lg-none h-100 px-0 w-100 m-0">
+          <div class="col-6 d-flex align-items-center">
+            <a class="text-start text-emp title-sub" href="/">NOLDAGA</a>
+          </div>
+          <div class="col-6 d-flex justify-content-end align-items-center">
+            {% if request.state.login_member %}
+              <a href="/bbs/logout" class="border-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-box-arrow-right" viewbox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                </svg>
+              </a>
+            {% else %}
+              <a href="/bbs/login" class="border-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-box-arrow-in-right" viewbox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                </svg>
+              </a>
+            {% endif %}
+            <a class="border-button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewbox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="row d-none d-lg-flex">
           {% if request.state.login_member %}
                   <div class="col d-flex justify-content-end">
+                    <p class="text-emp pe-4">
+                      {% if request.state.login_member %}
+                        어서오세요
+                        {{ member.mb_nick if member is defined else '' }}
+                        님
+                    {% endif %}
+                    </p>
                     <a class="text-emp" href="/bbs/logout">로그아웃</a>
                     <a class="text-emp" href="/bbs/member_confirm">정보수정</a>
                   </div>
@@ -97,41 +140,40 @@
                     <a class="text-emp" href="/bbs/register">회원가입</a>
                   </div>
                 {% endif %}
+
         </div>
-        <div class="row pb-4">
+        <div class="row pb-4 d-none d-lg-flex">
           <div class="col-12">
-            <div class="row text-center"><a class="navbar-brand text-emp title" href="/">ㅁNOLDAGAㅁ</a></div>
+            <div class="row text-center"><a class="text-emp title" href="/">ㅁNOLDAGAㅁ</a></div>
             <div class="row text-center">
               <p class="sub-title" style="margin-top:-50px ">- 놀다가고싶은 공간 -</p>
             </div>
           </div>
         </div>
-        <div class="row d-none d-lg-block">
-          <div class="text-center col-12 h-100" style="padding-left:150px;padding-right:150px">
-            <div class="navbar-nav nav-underline row d-flex justify-content-between">
-              <div class="nav-item menu-item  col">
-                <a class="navbutton fs-5 nav-link text-white font-weight-bold fw-bold" href="{{ url_for('content_view', co_id='company') }}">소개</a>
+        <div class="row d-none d-lg-block text-center h-100">
+            <div class="row d-flex justify-content-center w-100">
+              <div class="nav-item menu-item col-1">
+                <a class="navbutton fs-5 text-white fw-bold underline-none" href="{{ url_for('content_view', co_id='company') }}">소개</a>
               </div>
-              <div class="nav-item menu-item  col">
-                <a class="navbutton menu-item  fs-5 nav-link text-white font-weight-bold fw-bold" href="/board/drink">메뉴</a>
+              <div class="nav-item menu-item col-1">
+                <a class="navbutton fs-5 text-white fw-bold underline-none" href="/board/drink">메뉴</a>
               </div>
-              <div class="nav-item menu-item  col">
-                <a class="navbutton fs-5 nav-link text-white font-weight-bold fw-bold" href="/board/class">교육</a>
+              <div class="nav-item menu-item col-1">
+                <a class="navbutton fs-5 text-white fw-bold underline-none" href="/board/class">교육</a>
               </div>
-              <div class="nav-item menu-item  col">
-                <a class="navbutton fs-5 nav-link text-white font-weight-bold fw-bold" href="/board/rentalroom">대관</a>
+              <div class="nav-item menu-item col-1">
+                <a class="navbutton fs-5 text-white fw-bold underline-none" href="/board/rentalroom">대관</a>
               </div>
-              <div class="nav-item menu-item  col">
-                <a class="navbutton fs-5 nav-link text-white font-weight-bold fw-bold" href="/board/notice">공연</a>
+              <div class="nav-item menu-item col-1">
+                <a class="navbutton fs-5 text-white fw-bold underline-none" href="/board/notice">공연</a>
               </div>
-              <div class="nav-item menu-item  col">
-                <a class="navbutton fs-5 nav-link text-white font-weight-bold fw-bold" href="/board/notice">소식</a>
+              <div class="nav-item menu-item col-1">
+                <a class="navbutton fs-5 text-white fw-bold underline-none" href="/board/notice">소식</a>
               </div>
-              <div class="nav-item menu-item  col">
-                <a class="navbutton fs-5 nav-link text-white font-weight-bold fw-bold" href="/bbs/faq">고객지원</a>
+              <div class="nav-item menu-item col-1">
+                <a class="navbutton fs-5 text-white fw-bold underline-none" href="/bbs/faq">고객지원</a>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </nav>
