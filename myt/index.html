@@ -5,24 +5,26 @@
 
 {% block content %}
   {% include "/bbs/newwin.inc.html" %}
-  <section class="pt-md-9 py-5">
-    <div class="row justify-content-center">
-      <div class="d-none d-lg-flex col-12 col-md-8 col-lg-6 text-center" style="margin-top:200px"></div>
-      <div class="d-felx d-lg-none col-12 col-md-8 col-lg-6 text-center" style="margin-top:60px"></div>
-    </div>
-    <div class="row">
-      <div style="width:100%;">
-        <div class="container">
-          <div class="row py-5 g-4" >
-            <div class="col-12 col-lg-6 card overflow-hidden p-0" style="height:70vh">
-              <img src="{{ theme_asset(request, 'img/bakery2.jpg') }}" style=" width: auto; object-fit: cover;" class="card-img-top h-100">
-            </div>
-            <div class="col-12 col-lg-6" style="height:70vh">
-              <div class="row h-100">
-                <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/coffee1.jpg') }}" class="h-100"  style=" width: auto; object-fit: cover;" class="card-img-top"></div>
-                <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/test.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"></div>
-                <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/rental3.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"></div>
-                <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/concert6.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"></div>
+  <section class="pt-md-9 py-5 overflow-hidden">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="d-none d-lg-flex col-12 col-md-8 col-lg-6 text-center" style="margin-top:200px"></div>
+        <div class="d-felx d-lg-none col-12 col-md-8 col-lg-6 text-center" style="margin-top:60px"></div>
+      </div>
+      <div class="row">
+        <div style="width:100%;">
+          <div class="container">
+            <div class="row py-5 g-4" >
+              <div class="col-12 col-lg-6 card overflow-hidden p-0" style="height:70vh">
+                <img src="{{ theme_asset(request, 'img/bakery2.jpg') }}" style=" width: auto; object-fit: cover;" class="card-img-top h-100">
+              </div>
+              <div class="col-12 col-lg-6" style="height:70vh">
+                <div class="row h-100">
+                  <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/coffee1.jpg') }}" class="h-100"  style=" width: auto; object-fit: cover;" class="card-img-top"></div>
+                  <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/test.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"></div>
+                  <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/rental3.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"></div>
+                  <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/concert6.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -57,9 +59,11 @@
     </div>
   </section>-->
   <section class="pt-md-9 py-5">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
-          <h1 class="section-title dongle-bold">메뉴</h1>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
+            <h1 class="section-title dongle-bold">메뉴</h1>
+          </div>
         </div>
       </div>
       <div class="container">
@@ -86,15 +90,17 @@
             </div>
           </div>
         </div>
-        <div class="row">
-        <a href="/board/drink" class="button-white">더 많은 메뉴</a>
+        <div class="container text-center">
+          <a href="/board/drink" class="button-white">더 많은 메뉴</a>
         </div>
       </div>
   </section>
   <section class="pt-md-9 py-5 ">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
-        <h1 class="section-title dongle-bold">클래스</h1>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
+          <h1 class="section-title dongle-bold">클래스</h1>
+        </div>
       </div>
     </div>
     <div style="height: 40vh; background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 40%, rgba(255, 255, 255, 0.935) 70%), url('{{ theme_asset(request, 'img/cooking1.jpg') }}'); background-size: cover; background-position: center;">
@@ -112,7 +118,7 @@
         </div>
       </div>
     </div>
-    <div class="container mt-4 p-4" >
+    <div class="container mt-4 p-4">
       <div class="text-start pb-4">
         <h2 class="fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cookie" viewBox="0 0 16 16">
           <path d="M6 7.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m4.5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m-.5 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
@@ -138,9 +144,11 @@
     </div>
   </section>
   <section class="pt-md-9 py-5 ">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
-        <h1 class="section-title dongle-bold">공연</h1>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
+          <h1 class="section-title dongle-bold">공연</h1>
+        </div>
       </div>
     </div>
     <div style="height: 40vh; background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40%, rgb(169, 87, 0) 70%), url('{{ theme_asset(request, 'img/back.jpg') }}'); background-size: cover; background-position: center;">
@@ -222,9 +230,11 @@
     </div>
   </section>
   <section class="pt-md-9 py-5 ">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
-        <h1 class="section-title dongle-bold">대관</h1>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
+          <h1 class="section-title dongle-bold">대관</h1>
+        </div>
       </div>
     </div>
     <div style="height: 40vh; background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 40%, rgb(13, 92, 147) 70%), url('{{ theme_asset(request, 'img/rental3.jpg') }}'); background-size: cover; background-position: center;">
@@ -272,9 +282,11 @@
     </div>
   </section>
   <section class="pt-md-9 py-5 ">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
-        <h1 class="section-title dongle-bold">보드게임</h1>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 text-center mb-5">
+          <h1 class="section-title dongle-bold">보드게임</h1>
+        </div>
       </div>
     </div>
     <div style="height: 40vh; background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40%, rgb(255, 197, 109) 70%), url('{{ theme_asset(request, 'img/boardgame1.jpg') }}'); background-size: cover; background-position: center;">

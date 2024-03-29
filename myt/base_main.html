@@ -23,18 +23,17 @@
           height: 86px;
           z-index: -100;
         "></div>
-      <div class="navsquare-sub shadow-sm " style="
+      <div class="navsquare-sub shadow-sm d-flex align-items-center d-flex justify-content-center" style="
             position: fixed;
             top: 240px;
             left: 0px;
             width: 100%;
             height: 160px;
-            z-index: -100;
+            z-index: -99;
           ">
-        <div class="container">
-        <div class="row">
-          <div class="text-center w-100 h-100">
-            <div class="row d-flex justify-content-center w-100">
+        <div class="container m-0 px-0">
+          <div class="row d-none d-lg-block text-center h-100">
+            <div class="col-12 d-flex justify-content-center w-100">
               <div class="nav-item col-1">
                 <div class="row mb-3">
                   <a class="navsubbutton text-menu-sub underline-none" href="{{ url_for('content_view', co_id='company') }}">회사소개</a>
@@ -92,8 +91,7 @@
           </div>
         </div>
       </div>
-    </div>
-      <div class="container m-0 px-0" style=" height: 86px;">
+      <div class="container m-0 px-0" style="z-index: -100;">
         <div class="row d-lg-none h-100 px-0 w-100 m-0">
           <div class="col-6 d-flex align-items-center">
             <a class="text-start text-emp title-sub" href="/">NOLDAGA</a>
@@ -151,7 +149,7 @@
           </div>
         </div>
         <div class="row d-none d-lg-block text-center h-100">
-            <div class="row d-flex justify-content-center w-100">
+            <div class="col-12 d-flex justify-content-center w-100">
               <div class="nav-item menu-item col-1">
                 <a class="navbutton fs-5 text-white fw-bold underline-none" href="{{ url_for('content_view', co_id='company') }}">소개</a>
               </div>
@@ -399,17 +397,18 @@
         <div id="ft_company" class="ft_cnt"></div>
       </div>
       <div id="ft_copy">
-        <div class="row">
-          <div class="col-6 ">
-            <a class="text-gray" href="{{ url_for('content_view', co_id='company') }}">회사소개</a>
-            <a class="text-gray" href="{{ url_for('content_view', co_id='privacy') }}">개인정보처리방침</a>
-            <a class="text-gray" href="{{ url_for('content_view', co_id='provision') }}">서비스이용약관</a>
+        <div class="container">
+          <div class="row">
+            <div class="col-6 ">
+              <a class="text-gray" href="{{ url_for('content_view', co_id='company') }}">회사소개</a>
+              <a class="text-gray" href="{{ url_for('content_view', co_id='privacy') }}">개인정보처리방침</a>
+              <a class="text-gray" href="{{ url_for('content_view', co_id='provision') }}">서비스이용약관</a>
+            </div>
+            <div class="col-6">Copyright &copy;
+              <b>{{ request.url.hostname }}.</b>
+              All rights reserved.</div>
           </div>
-          <div class="col-6">Copyright &copy;
-            <b>{{ request.url.hostname }}.</b>
-            All rights reserved.</div>
         </div>
-
       </div>
 
       <button type="button" id="top_btn">

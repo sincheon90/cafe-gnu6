@@ -15,7 +15,7 @@
           height: 86px;
           z-index: -100;
         "></div>
-    <div class="navsquare-sub shadow-sm " style="
+    <div class="navsquare-sub shadow-sm align-items-center d-flex justify-content-center" style="
           position: fixed;
           top: 86px;
           left: 0px;
@@ -23,11 +23,11 @@
           height: 150px;
           z-index: -100;
         ">
-      <div class="container">
+      <div class="container m-0 px-0">
         <div class="row">
           <div class="col-2"></div>
           <div class="text-center col-8">
-            <div class="navbar-nav nav-underline row d-flex justify-content-between">
+            <div class="navbar-nav nav-underline d-flex justify-content-between">
               <div class="nav-item col">
                 <div class="row mb-3">
                   <a class="navsubbutton underline-none text-menu-sub" href="{{ url_for('content_view', co_id='company') }}">회사소개</a>
@@ -116,7 +116,7 @@
           </a>
         </div>
       </div>
-      <div class="row text-center h-100 w-100">
+      <div class="row d-none d-lg-flex">
         <div class="h-100 d-flex flex-column">
             <div class="row text-end">
               {% if request.state.login_member %}
@@ -403,17 +403,18 @@
         <div id="ft_company" class="ft_cnt"></div>
       </div>
       <div id="ft_copy">
-        <div class="row">
-          <div class="col-6 ">
-            <a class="text-gray" href="{{ url_for('content_view', co_id='company') }}">회사소개</a>
-            <a class="text-gray" href="{{ url_for('content_view', co_id='privacy') }}">개인정보처리방침</a>
-            <a class="text-gray" href="{{ url_for('content_view', co_id='provision') }}">서비스이용약관</a>
+        <div class="container">
+          <div class="row">
+            <div class="col-6 ">
+              <a class="text-gray" href="{{ url_for('content_view', co_id='company') }}">회사소개</a>
+              <a class="text-gray" href="{{ url_for('content_view', co_id='privacy') }}">개인정보처리방침</a>
+              <a class="text-gray" href="{{ url_for('content_view', co_id='provision') }}">서비스이용약관</a>
+            </div>
+            <div class="col-6">Copyright &copy;
+              <b>{{ request.url.hostname }}.</b>
+              All rights reserved.</div>
           </div>
-          <div class="col-6">Copyright &copy;
-            <b>{{ request.url.hostname }}.</b>
-            All rights reserved.</div>
         </div>
-
       </div>
 
       <button type="button" id="top_btn">
