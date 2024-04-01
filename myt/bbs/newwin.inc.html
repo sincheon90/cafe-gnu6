@@ -1,10 +1,9 @@
 {% if newwins %}
   <!-- 팝업레이어 시작 { -->
-  <div id="hd_pop">
-    <h2 class="blind">팝업레이어 알림</h2>
+  <div id="hd_pop" >
     {% for newwin in newwins %}
-      <div id="hd_pops_{{ newwin.nw_id }}" class="hd_pops col-12 col-lg-6" style="top:100px;left:0px">
-        <div class="hd_pops_con" style="">
+      <div id="hd_pops_{{ newwin.nw_id }}" class="hd_pops overflow-hidden" style="top:100px;left:0px">
+        <div class="hd_pops_con">
           {{ newwin.nw_content|safe }}
         </div>
         <div class="hd_pops_footer">
