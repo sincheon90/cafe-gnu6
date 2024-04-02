@@ -16,14 +16,15 @@
           <div class="container">
             <div class="row py-5 g-4" >
               <div class="col-12 col-lg-6 card overflow-hidden p-0" style="height:70vh">
-                <img src="{{ theme_asset(request, 'img/bakery2.jpg') }}" style=" width: auto; object-fit: cover;" class="card-img-top h-100">
+                <img src="{{ theme_asset(request, 'img/bakery3.jpg') }}" style=" width: auto; object-fit: cover; " class="card-img-top h-100">
+                <div style="position: absolute; left:20px; top:20px; margin: 20px; padding:30px; background-color: rgba(37, 37, 37, 0.581);"><span class="h1 fw-bold text-emp">놀다가 카페</span><br><br><span class="h2 fw-bold text-white">월-토 12:00-22:00</span></div>
               </div>
               <div class="col-12 col-lg-6" style="height:70vh">
                 <div class="row h-100">
-                  <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/coffee1.jpg') }}" class="h-100"  style=" width: auto; object-fit: cover;" class="card-img-top"></div>
-                  <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/test.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"></div>
-                  <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/rental3.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"></div>
-                  <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/concert6.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"></div>
+                  <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/coffee1.jpg') }}" class="h-100"  style=" width: auto; object-fit: cover;" class="card-img-top"><div class="h2 text-white fw-bold" style="position: absolute; left:20px; top:20px;">#카페</div></div>
+                  <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/cooking1.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"><div class="h2 text-white fw-bold" style="position: absolute; left:20px; top:20px;">#클래스</div></div>
+                  <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/rental3.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"><div class="h2 text-white fw-bold" style="position: absolute; left:20px; top:20px;">#대관</div></div>
+                  <div class="col-6 h-50 card overflow-hidden p-0" ><img src="{{ theme_asset(request, 'img/concert6.jpg') }}" class="h-100" style=" width: auto; object-fit: cover;" class="card-img-top"><div class="h2 text-white fw-bold" style="position: absolute; left:20px; top:20px;">#공연</div></div>
                 </div>
               </div>
             </div>
@@ -129,7 +130,7 @@
       </div>
       <div class="row g-4">
         <div class="col-12 col-lg-4">
-          <div class="video mb-2" style="background-image: url('{{ theme_asset(request, 'img/cooking1.jpg') }}'); background-size: cover;">
+          <div class="video mb-2" style="background-image: url('{{ theme_asset(request, 'img/pizza.jpg') }}'); background-size: cover;">
             <div class="d-flex flex-column align-items-center justify-content-center">
             </div>
           </div>
@@ -138,6 +139,18 @@
           </div>
           <div class="h4 fw-bold" style="color:gray">
             피자만들기 클래스
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="video mb-2" style="background-image: url('{{ theme_asset(request, 'img/donut.jpg') }}'); background-size: cover; background-position: center bottom;"">
+            <div class="d-flex flex-column align-items-center justify-content-center">
+            </div>
+          </div>
+          <div class="h5">
+            재료개량부터 굽기까지
+          </div>
+          <div class="h4 fw-bold" style="color:gray">
+            도넛만들기 클래스
           </div>
         </div>
       </div>
@@ -152,7 +165,7 @@
       </div>
     </div>
     <div style="height: 40vh; background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40%, rgb(169, 87, 0) 70%), url('{{ theme_asset(request, 'img/back.jpg') }}'); background-size: cover; background-position: center;">
-      <div style="background-color: rgba(0, 0, 0, 0.5); width:100%; height:100%">
+      <div style="width:100%; height:100%">
         <div class="container d-flex justify-content-end align-items-center h-100">
           <div class="row w-100 py-5 h-75">
             <div class="col-12 h-100">

@@ -36,6 +36,9 @@
 .pagination .current:hover,
 .pagination .current:focus { background-color:rgb(36, 178, 171); border:1px solid #24B1AA; color:#fff; font-weight:bold; }
 
+.text-border{
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
 
 
 @font-face {
