@@ -54,15 +54,38 @@
                 <div class="row mb-3">
                   <a class="navsubbutton text-menu-sub underline-none" href="/board/class">교육신청</a>
                 </div>
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/gallery/class">갤러리</a>
+                </div>
               </div>
               <div class="nav-item col-1">
                 <div class="row mb-3">
                   <a class="navsubbutton text-menu-sub underline-none" href="/board/rentalroom">대관신청</a>
                 </div>
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/gallery/rental">갤러리</a>
+                </div>
               </div>
               <div class="nav-item col-1">
                 <div class="row mb-3">
                   <a class="navsubbutton text-menu-sub underline-none" href="/bbs/content/calendar">일정</a>
+                </div>
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/board/teaminfo">팀정보</a>
+                </div>
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/video/live">공연영상</a>
+                </div>
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/gallery/live">갤러리</a>
+                </div>
+              </div>
+              <div class="nav-item col-1">
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/board/boardgame">보유게임</a>
+                </div>
+                <div class="row mb-3">
+                  <a class="navsubbutton text-menu-sub underline-none" href="/gallery/boardgame">갤러리</a>
                 </div>
               </div>
               <div class="nav-item col-1">
@@ -74,9 +97,6 @@
                 </div>
                 <div class="row mb-3">
                   <a class="navsubbutton text-menu-sub underline-none" href="/board/donerwrite">후원</a>
-                </div>
-                <div class="row mb-3">
-                  <a class="navsubbutton text-menu-sub underline-none" href="/board/livevideo">활동영상</a>
                 </div>
               </div>
               <div class="nav-item col-1">
@@ -120,25 +140,28 @@
           </div>
         </div>
         <div class="row d-none d-lg-flex">
-          {% if request.state.login_member %}
-                  <div class="col d-flex justify-content-end">
-                    <p class="text-emp pe-4">
-                      {% if request.state.login_member %}
+          <div class="h-100 d-flex flex-column">
+              <div class="row text-end">
+                {% if request.state.login_member %}
+                  <div class="col">
+                    {% if request.state.login_member %}
+                    <span class="text-emp text-end">
                         어서오세요
                         {{ member.mb_nick if member is defined else '' }}
                         님
+                    </span>
                     {% endif %}
-                    </p>
                     <a class="text-emp" href="/bbs/logout">로그아웃</a>
                     <a class="text-emp" href="/bbs/member_confirm">정보수정</a>
                   </div>
                 {% else %}
-                  <div class="col d-flex justify-content-end">
+                  <div class="col">
                     <a class="text-emp" href="/bbs/login">로그인</a>
                     <a class="text-emp" href="/bbs/register">회원가입</a>
                   </div>
                 {% endif %}
 
+              </div>
         </div>
         <div class="row pb-4 d-none d-lg-flex">
           <div class="col-12">
@@ -163,7 +186,10 @@
                 <a class="navbutton fs-5 text-white fw-bold underline-none" href="/board/rentalroom">대관</a>
               </div>
               <div class="nav-item menu-item col-1">
-                <a class="navbutton fs-5 text-white fw-bold underline-none" href="/board/notice">공연</a>
+                <a class="navbutton fs-5 text-white fw-bold underline-none" href="/bbs/content/calendar">공연</a>
+              </div>
+              <div class="nav-item menu-item col-1">
+                <a class="navbutton fs-5 text-white fw-bold underline-none" href="/board/boardgame">보드게임</a>
               </div>
               <div class="nav-item menu-item col-1">
                 <a class="navbutton fs-5 text-white fw-bold underline-none" href="/board/notice">소식</a>
@@ -227,6 +253,9 @@
                 <div class="row">
                   <a class="nav-link text-menu-sub" href="/board/class">교육신청</a>
                 </div>
+                <div class="row">
+                  <a class="nav-link text-menu-sub" href="/board/class">갤러리</a>
+                </div>
               </div>
             </div>
           </div>
@@ -241,16 +270,59 @@
                 <div class="row">
                   <a class="nav-link text-menu-sub" href="/board/rentalroom">대관신청</a>
                 </div>
+                <div class="row">
+                  <a class="nav-link text-menu-sub" href="/board/class">갤러리</a>
+                </div>
               </div>
             </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
-                소식
+                공연
               </button>
             </h2>
             <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <div class="row">
+                  <a class="nav-link text-menu-sub" href="/bbs/content/calendar">일정</a>
+                </div>
+                <div class="row">
+                  <a class="nav-link text-menu-sub" href="/board/teaminfo">팀정보</a>
+                </div>
+                <div class="row">
+                  <a class="nav-link text-menu-sub" href="/video/live">공연영상</a>
+                </div>
+                <div class="row">
+                  <a class="nav-link text-menu-sub" href="/gallery/live">갤러리</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                보드게임
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <div class="row">
+                  <a class="nav-link text-menu-sub" href="/board/boardgame">보유게임</a>
+                </div>
+                <div class="row">
+                  <a class="nav-link text-menu-sub" href="/gallery/boardgame">갤러리</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
+                소식
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
               <div class="accordion-body">
                 <div class="row">
                   <a class="nav-link text-menu-sub" href="/board/notice">공지사항</a>
@@ -259,24 +331,18 @@
                   <a class="nav-link text-menu-sub" href="/board/event">이벤트</a>
                 </div>
                 <div class="row">
-                  <a class="nav-link text-menu-sub" href="/bbs/content/calendar">일정</a>
-                </div>
-                <div class="row">
                   <a class="nav-link text-menu-sub" href="/board/donerwrite">후원</a>
-                </div>
-                <div class="row">
-                  <a class="nav-link text-menu-sub" href="/board/livevideo">활동영상</a>
                 </div>
               </div>
             </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false" aria-controls="panelsStayOpen-collapseEight">
                 고객지원
               </button>
             </h2>
-            <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+            <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse">
               <div class="accordion-body">
                 <div class="row">
                   <a class="nav-link text-menu-sub" href="/bbs/faq">자주하는 질문</a>
