@@ -15,13 +15,22 @@ router = APIRouter()
 templates = UserTemplates()
 templates.env.globals["theme_asset"] = theme_asset
 
+@router.get("/info")
+def info(request: Request, db:db_session):
+    return templates.TemplateResponse(
+        f"{plugin_config.TEMPLATE_PATH}/info.html",
+        {
+            "request": request,
+            "title": f"일정",
+            "content": f"일정",
+        })
 
 @router.get("/get")
 def show(request: Request, db:db_session):
     schedule=db.get(Schedule, 1)
     return schedule.data
 
-@router.post("/set0.")
+@router.post("/set")
 async def setting(request: Request, db:db_session):
     request_body = await request.json()
     db.execute(
@@ -31,13 +40,3 @@ async def setting(request: Request, db:db_session):
     )
     db.commit()
     return {"message": "Received JSON data successfully"}
-
-@router.get("/get_schedule")
-def show(request: Request):
-    return templates.TemplateResponse(
-        f"{plugin_config.TEMPLATE_PATH}/user_demo.html",
-        {
-            "request": request,
-            "title": f"Hello plugin Template!",
-            "content": f"Hello {module_name}!",
-        })
