@@ -21,7 +21,7 @@ def show(request: Request, db:db_session):
     schedule=db.get(Schedule, 1)
     return schedule.data
 
-@router.post("/set")
+@router.post("/set0.")
 async def setting(request: Request, db:db_session):
     request_body = await request.json()
     db.execute(
