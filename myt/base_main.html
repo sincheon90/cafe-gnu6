@@ -145,19 +145,19 @@
             {% if request.state.login_member %}
               <div class="col">
                 {% if request.state.login_member %}
-                  <span class="text-emp text-end">
+                  <span class="text-emp text-end text-menu-sub">
                     어서오세요
                     {{ member.mb_nick if member is defined else '' }}
                     님
                   </span>
                 {% endif %}
-                <a class="text-emp" href="/bbs/logout">로그아웃</a>
-                <a class="text-emp" href="/bbs/member_confirm">정보수정</a>
+                <a class="text-emp text-menu-sub" href="/bbs/logout">로그아웃</a>
+                <a class="text-emp text-menu-sub" href="/bbs/member_confirm">정보수정</a>
               </div>
             {% else %}
               <div class="col">
-                <a class="text-emp" href="/bbs/login">로그인</a>
-                <a class="text-emp" href="/bbs/register">회원가입</a>
+                <a class="text-emp text-menu-sub" href="/bbs/register">회원가입</a>
+                <a class="text-emp text-menu-sub" href="/bbs/login">로그인</a>
               </div>
             {% endif %}
 
