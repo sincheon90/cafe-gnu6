@@ -25,6 +25,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })
 
+  // Applying mouseover effects
+  setupMouseEvents(navbarText, "mouseover", "text-over", "text-menu");
+  setupMouseEvents(navbarText, "mouseout", "text-menu", "text-over");
+
+  // Applying mouseover effects to sub-menu elements
+  setupMouseEvents(navbarTextSub, "mouseover", "text-over", "text-menu");
+  setupMouseEvents(navbarTextSub, "mouseout", "text-menu", "text-over");
+
+  function setupMouseEvents(elements, eventType, addClass, removeClass) {
+    elements.forEach(function(element) {
+      element.addEventListener(eventType, function() {
+        if (window.matchMedia("(min-width: 992px)").matches) {
+          element.classList.add(addClass);
+          element.classList.remove(removeClass);
+        }
+      });
+    });
+  }
+
   function mouseOutNav() {
     if (window.matchMedia("(min-width: 992px)").matches) {
       subNavUp();

@@ -201,7 +201,8 @@ a.button-black{
   transition: all 0.3s ease; /* 부드러운 전환 효과 */
 }
 .text-menu{
-  color:#24B1AA;
+  /* color:#24B1AA; */
+  color:#273332;
 }
 
 .text-gray{
@@ -209,6 +210,10 @@ a.button-black{
 }
 .text-menu-sub{
   color:#273332;
+}
+.text-over{
+  color: #24B1AA;
+  text-decoration-line: underline;
 }
 
 .owl-carousel > .owl-nav > .owl-prev{
