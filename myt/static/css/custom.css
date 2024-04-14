@@ -122,8 +122,18 @@ body {
   font-family: 'HakgyoansimWoojuR', sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size:20px;
+    font-size:15px;
     letter-spacing:10px;
+    color: gray;
+}
+.sub-title-small{
+  font-family: 'HakgyoansimWoojuR', sans-serif;
+    margin-top:-10px; 
+    margin-left:3px;
+    font-weight: 700;
+    font-style: normal;
+    font-size:7px; 
+    letter-spacing:5px;
     color: gray;
 }
 .navsquare {
@@ -183,6 +193,10 @@ a.button-black{
   border:1px solid white
 }
 
+.text-emp-wrapper{
+  display:flex;
+  flex-direction: column;
+}
 .text-emp {
   color: #24B1AA;
   text-decoration-line: none;
