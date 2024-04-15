@@ -291,3 +291,6 @@ a.button-black{
   border-radius: 100vh;
   background-color: #24B1AA;
 }
+.transition-effect{
+  transition: 0.4s; /* Adds a transition effect when the size changes */
+}
