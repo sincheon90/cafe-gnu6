@@ -2132,7 +2132,12 @@ transition:all 0.1s ease-in-out}
 p input:focus + label::after,
 p input:valid + label::after { width:100%; transform:translateX(0); }
 /* 포커스 될 때 파란색 가로줄이 생김 */
+.register_form_inner .frm_input:valid + label.text_input
 
+/* 날짜 선택 필드가 read-only인 경우, 레이블 색상이 해제되지 않도록 유지하기 위한 CSS. 작성일 : 2024/04/30. 작성자: 오정권 */
+.register_form_inner .frm_input:not(:placeholder-shown) + label.text_input{
+    color: var(--primaryColor); /* 필드에 값이 있을 때 */
+  }
 
 #fregisterform .cert_desc {color:var(--primaryColor);}
 #fregisterform .cert_req {margin-left:5px;line-height:35px;}
