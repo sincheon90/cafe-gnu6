@@ -2133,6 +2133,28 @@ p input:focus + label::after,
 p input:valid + label::after { width:100%; transform:translateX(0); }
 /* 포커스 될 때 파란색 가로줄이 생김 */
 
+/* 기본적인 select 스타일을 input과 일치시키기 */
+.register_form_inner select {
+    padding: 5px 0px; /* input의 padding과 동일하게 설정 */
+    border: none; /* input과 동일하게 테두리 없앰 */
+    border-bottom: 1px solid #d0d3db; /* input과 같은 테두리 설정 */
+    border-radius: 0px; /* input과 동일하게 둥근 모서리 없앰 */
+    background: transparent; /* input과 동일한 배경 설정 */
+    color: var(--fontColor); /* input과 같은 색상 */
+    cursor: pointer; /* 커서 스타일을 pointer로 변경 */
+    appearance: none; /* 기본 스타일을 제거하여 통일된 스타일 적용 */
+  }
+  
+  /* select 요소가 포커스되었을 때의 스타일링 */
+  .register_form_inner select:focus {
+    border-bottom: 2px solid var(--primaryColor); /* input의 포커스 스타일과 동일하게 설정 */
+    outline: none; /* 포커스 시 기본 outline 제거 */
+  }
+  
+  /* select 요소의 옵션(placeholder 유사) */
+  .register_form_inner select option {
+    color: var(--fontColor); /* 기본 옵션 텍스트 색상을 input과 유사하게 설정 */
+  }
 
 #fregisterform .cert_desc {color:var(--primaryColor);}
 #fregisterform .cert_req {margin-left:5px;line-height:35px;}
