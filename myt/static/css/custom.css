@@ -291,3 +291,7 @@ a.button-black{
   border-radius: 100vh;
   background-color: #24B1AA;
 }
+
+.register_form_inner .frm_input:not(:placeholder-shown) + label.text_input{
+  color: var(--primaryColor); /* 필드에 값이 있을 때 */
+}
